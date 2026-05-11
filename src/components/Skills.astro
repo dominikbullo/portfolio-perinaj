@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from "../config";
+const catColors = ["#94A187", "#5a8a72", "#7a8f5e", "#b8956a"];
 ---
 
 <section id="skills">
@@ -7,8 +8,11 @@ import { siteConfig } from "../config";
     <span class="section-label reveal">skills</span>
     <ul class="skills-list">
       {siteConfig.skills.map((item, i) => (
-        <li class="skill-row reveal" style={`--delay: ${i * 0.08}s`}>
-          <span class="skill-cat">{item.category}</span>
+        <li class="skill-row reveal" style={`--delay: ${i * 0.08}s; --cat-color: ${catColors[i % catColors.length]}`}>
+          <span class="skill-cat">
+            <span class="skill-dot"></span>
+            {item.category}
+          </span>
           <span class="skill-items">{item.items}</span>
         </li>
       ))}
@@ -44,6 +48,19 @@ import { siteConfig } from "../config";
     font-size: 14px;
     font-weight: 600;
     color: var(--green);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 3px;
+  }
+
+  .skill-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cat-color, var(--sage));
+    flex-shrink: 0;
   }
 
   .skill-items {

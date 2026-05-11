@@ -20,10 +20,11 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary SEO -->
-    <title>{siteConfig.name} — {siteConfig.role} · Stockholm</title>
+    <title>{siteConfig.name} — {siteConfig.role} · IBM · Stockholm</title>
     <meta name="description" content={siteConfig.description} />
-    <meta name="keywords" content="Nordic Operations Manager, Stockholm, Sweden, Operations Manager, Sustainability, EU Climate Policy, PFAS, Baltic Sea, IBM, Nordcloud, Project Management, Grant Management, Workplace Strategy, Swedish speaking, multilingual, Barbora Perinajova, Barbora Perinajová" />
+    <meta name="keywords" content="Nordic Operations Manager, IBM, Nordcloud, Stockholm, Sweden, Operations Manager, P&L Ownership, Nordic Offices, Sustainability, ESG, EU Climate Policy, PFAS Regulation, Baltic Sea, Baltic Sea Region Youth Forum, European Parliament, European Commission, Grant Management, SIDA, EU Structural Funds, Workplace Strategy, Procurement, Swedish speaking, multilingual, 6 languages, Stockholm University, MSc, Barbora Perinajova, Barbora Perinajová, perinaj.com" />
     <meta name="author" content={siteConfig.name} />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://perinaj.com" />
 
     <!-- Open Graph -->
@@ -55,11 +56,12 @@ import "../styles/global.css";
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Barbora Perinajová",
-      "alternateName": "Barbora Perinajova",
+      "alternateName": ["Barbora Perinajova", "Barbora Perinaj"],
       "jobTitle": "Nordic Operations Manager",
-      "description": "Nordic Operations Manager at Nordcloud, an IBM Company. Sustainability advocate and EU climate policy expert. Baltic Sea Region Youth Forum member. Based in Stockholm, Sweden.",
+      "description": "Nordic Operations Manager at Nordcloud, an IBM Company, responsible for 5 Nordic offices across Sweden, Denmark, and Norway with full P&L ownership. Sustainability advocate and EU climate policy expert; elected member, Baltic Sea Region Youth Forum Climate & Environment Working Group; invited speaker at European Commission pre-COP30 workshop (Brussels, 2024) and CBSS Youth Ministerial (Warsaw, 2024). Former European Parliament Schuman Trainee (Agriculture & Trade Committees). MSc Globalisation, Environment & Social Change, Stockholm University (2023). Fluent in Swedish, English, Czech, Slovak, Danish, and Norwegian.",
       "url": "https://perinaj.com",
       "email": siteConfig.email,
+      "telephone": siteConfig.phone,
       "image": "https://perinaj.com/barbora.jpg",
       "worksFor": {
         "@type": "Organization",
@@ -67,9 +69,31 @@ import "../styles/global.css";
         "url": "https://nordcloud.com",
         "parentOrganization": {
           "@type": "Organization",
-          "name": "IBM"
+          "name": "IBM",
+          "url": "https://ibm.com"
         }
       },
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Operations Manager",
+        "occupationLocation": { "@type": "Country", "name": "Sweden" },
+        "description": "P&L ownership for 5 Nordic offices; vendor contract management, sustainability procurement, cross-border operations across Sweden, Denmark, and Norway"
+      },
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Baltic Sea Region Youth Forum",
+          "description": "Elected member, Climate & Environment Working Group — PFAS regulation and EU nature restoration policy advocacy"
+        },
+        {
+          "@type": "Organization",
+          "name": "Council of the Baltic Sea States (CBSS) Youth Advisory Network"
+        }
+      ],
+      "award": [
+        "European Commission pre-COP30 Workshop Speaker, Brussels 2024",
+        "CBSS Youth Ministerial Speaker, Warsaw 2024"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Stockholm",
@@ -78,12 +102,12 @@ import "../styles/global.css";
       },
       "sameAs": [siteConfig.linkedin],
       "knowsLanguage": [
-        { "@type": "Language", "name": "Swedish" },
-        { "@type": "Language", "name": "English" },
-        { "@type": "Language", "name": "Czech" },
-        { "@type": "Language", "name": "Slovak" },
-        { "@type": "Language", "name": "Danish" },
-        { "@type": "Language", "name": "Norwegian" }
+        { "@type": "Language", "name": "Swedish", "alternateName": "sv" },
+        { "@type": "Language", "name": "English", "alternateName": "en" },
+        { "@type": "Language", "name": "Czech", "alternateName": "cs" },
+        { "@type": "Language", "name": "Slovak", "alternateName": "sk" },
+        { "@type": "Language", "name": "Danish", "alternateName": "da" },
+        { "@type": "Language", "name": "Norwegian", "alternateName": "no" }
       ],
       "alumniOf": [
         {
@@ -97,28 +121,42 @@ import "../styles/global.css";
           "url": "https://www.tuni.fi"
         }
       ],
-      "hasCredential": {
-        "@type": "EducationalOccupationalCredential",
-        "name": "MSc Globalisation, Environment & Social Change",
-        "credentialCategory": "degree",
-        "recognizedBy": {
-          "@type": "CollegeOrUniversity",
-          "name": "Stockholm University"
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "MSc Globalisation, Environment & Social Change",
+          "credentialCategory": "degree",
+          "educationalLevel": "Master",
+          "dateCreated": "2023",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "Stockholm University"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "European Parliament Traineeship",
+          "credentialCategory": "training",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "European Parliament",
+            "url": "https://www.europarl.europa.eu"
+          }
         }
-      },
+      ],
       "knowsAbout": [
-        "Nordic Operations Management",
-        "EU Climate Policy",
-        "PFAS Regulation",
-        "Baltic Sea Governance",
-        "Circular Economy",
-        "Sustainability Strategy",
-        "ESG",
-        "Grant Management",
-        "Procurement",
-        "Budget Management",
-        "Workplace Strategy",
-        "Stakeholder Engagement"
+        "Nordic Operations Management", "P&L Ownership",
+        "Multi-site Facilities Management", "Vendor Contract Management",
+        "Procurement Strategy", "Budget Forecasting", "Cost Control",
+        "Workplace Strategy", "Cross-border Operations",
+        "EU Green Deal", "EU Climate Policy", "PFAS Regulation",
+        "Baltic Sea Action Plan", "Baltic Sea Governance",
+        "Circular Economy", "Nature Restoration Policy",
+        "Sustainability Strategy", "ESG", "Climate Finance",
+        "EU Structural Funds", "Grant Management", "SIDA Funding",
+        "Stakeholder Engagement", "Policy Analysis",
+        "Multi-stakeholder Facilitation", "Institutional Fundraising",
+        "IBM", "Nordcloud", "Nordic Market", "Sweden", "Stockholm"
       ]
     })}</script>
     <script is:inline>
