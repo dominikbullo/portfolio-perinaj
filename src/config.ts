@@ -1,89 +1,96 @@
 export const siteConfig = {
   name: "Barbora Perinajová",
-  role: "Sustainability Project Coordinator",
-  description: "Portfolio of Barbora Perinajová — Sustainability Project Coordinator based in Stockholm, Sweden.",
-  eyebrow: "Sustainability · Environment · Impact",
+  role: "Nordic Operations Manager",
+  description: "Portfolio of Barbora Perinajová — Nordic Operations Manager and sustainability advocate based in Stockholm, Sweden.",
+  eyebrow: "Operations · Sustainability · EU Policy",
   email: "barbora@perinaj.com",
   phone: "+72 15 25 073",
   linkedin: "https://www.linkedin.com/in/barboraperinajova/",
   cvUrl: "/cv",
   meetingUrl: "barboraperinaj/online",
   location: "Stockholm, Sweden",
-  profilePhoto: "https://dev.perinaj.com/wp-content/uploads/2023/10/barbora-perinajova.jpeg",
+  profilePhoto: "/barbora.jpg",
   about:
-    "I'm a dynamic professional with a strong record in urban development and project management, grounded in environmental science, fueled by a passion for the environment, and driven to combat climate change while promoting sustainability. With a background in environmental studies and experience in the European Parliament, I have a solid foundation for leading transformational change in sustainability initiatives. My expertise in Urban Living Labs has finely tuned my skills in urban planning, project management, and environmental and social sustainability.",
+    "I build systems that work — and I make sure they work for the planet too. As Nordic Operations Manager at Nordcloud, an IBM Company, I oversee five offices across Sweden, Denmark, and Norway, serving as the central link between business units, senior management, and external vendors. I hold full budget ownership across all Nordic offices: forecasting, cost tracking, vendor payments, and sustainability-aligned cost optimisation. Beyond operations, I'm actively engaged in Baltic Sea governance as part of the Baltic Sea Region Youth Forum's Climate & Environment Working Group, focusing on PFAS accountability and nature restoration. I represented the forum at a pre-COP30 European Commission workshop and the CBSS Youth Ministerial in Warsaw. Earlier career: European Parliament internship, EU and SIDA grant management, international project coordination across the Nordics. Master's in Geography — Globalisation, Environment & Social Change from Stockholm University.",
   aboutTags: [
-    "Urban Development",
-    "Environmental Science",
+    "Nordic Operations",
+    "EU Climate Policy",
+    "Baltic Sea Governance",
+    "Sustainability Strategy",
+    "Budget & Procurement",
     "Project Management",
-    "Urban Infrastructure",
-    "Circular Economy",
-    "International Relations",
     "Grant Writing",
-    "EU Policy",
+    "Stakeholder Engagement",
   ],
   experience: [
     {
-      period: "2021 — 2023",
-      role: "Sustainability Project Coordinator",
-      company: "Balteus s.r.o.",
+      period: "Oct 2025 — Present",
+      role: "Nordic Operations Manager",
+      company: "Nordcloud, an IBM Company",
       description:
-        "Led eco-conscious projects, conducted research, and ensured project success. Coordinated initiatives processing 300 tons of non-recyclable plastics daily into sustainable products. Identified and secured EU funding for circular economy projects.",
+        "Sole operational lead for five Nordic offices across Sweden (Stockholm, Gothenburg, Malmö), Denmark, and Norway. Full budget ownership: forecasting, cost tracking, vendor payments, and sustainability-aligned cost optimisation. Central link between business units, senior management, and external vendors across a complex, multi-country environment.",
     },
     {
-      period: "Aug — Sep 2021",
-      role: "Project Coordinator",
-      company: "Slovak Investment and Trade Development Agency",
+      period: "Jan — Oct 2025",
+      role: "Communications & Operations Lead",
+      company: "DigiNytt",
       description:
-        "Actively facilitated a Polish cross-border initiative, supporting international investment promotion and cross-border project development.",
+        "Led communications, operations, and administration aligned with the company's sustainability vision. Managed external partnerships, brand messaging, and editorial content on smart water and climate technologies. Integrated climate and social perspectives into all strategic and editorial decisions.",
     },
     {
-      period: "Sep — Dec 2020",
-      role: "Executive Support Coordinator Trainee",
+      period: "Jan — Jun 2024",
+      role: "Advocacy & Institutional Fundraising Intern",
+      company: "The Kvinna till Kvinna Foundation",
+      description:
+        "Developed policy proposals on gender equality and climate financing. Coordinated international workshops bringing together government, NGO, and academic stakeholders. Secured and managed grant funding for initiatives supporting women in conflict zones.",
+    },
+    {
+      period: "Dec 2021 — Sep 2023",
+      role: "Project Manager",
+      company: "BALTEUS spol. s.r.o.",
+      description:
+        "Led environmental sustainability projects transitioning heavy industry towards greener practices. Identified and secured EU funding opportunities, coordinated cross-functional teams on circular economy initiatives, and managed stakeholder relations with industry partners and funding bodies.",
+    },
+    {
+      period: "Aug 2020 — Jan 2021",
+      role: "Parliamentary Trainee",
       company: "European Parliament",
       description:
-        "Gained a deep understanding of EU policy processes. Supported environmental policy research and preparation of legislative briefings on sustainability, climate change, and the circular economy.",
-    },
-    {
-      period: "Aug 2020",
-      role: "Office Assistant Trainee",
-      company: "Ministry of Foreign and European Affairs, Slovakia",
-      description:
-        "Played a pivotal role in coordinating and executing Slovak humanitarian aid to Lebanon, contributing to international development and diplomatic initiatives.",
+        "Contributed to the Committees on Agriculture, Rural Development, and International Trade in Brussels. Supported analysis of the Farm to Fork strategy and international trade agreements. Drafted legislative queries and provided administrative support for committee proceedings.",
     },
   ],
   projects: [
     {
-      name: "Design Thinking Project — Region Stockholm",
+      name: "Baltic Sea Region Youth Forum",
       description:
-        "Created sustainable solutions to real-world challenges in the Stockholm area with global relevance. Used a human-centered approach, applying the needs and perspectives of users to develop innovative concepts in urban sustainability.",
-      tags: ["Urban Development", "Design Thinking", "Sustainability"],
+        "Active member of the Climate & Environment Working Group, focusing on PFAS accountability and nature restoration. Represented the forum at a pre-COP30 European Commission workshop and the CBSS Youth Ministerial in Warsaw, shaping intergovernmental recommendations on climate, digitalisation, and connectivity.",
+      tags: ["EU Climate Policy", "PFAS", "Youth Governance", "Baltic Sea"],
       url: undefined as string | undefined,
     },
     {
-      name: "UNICEF Emergency Lessons Campaign",
+      name: "Design Thinking for Urban Sustainability",
       description:
-        "Actively contributed to the Emergency Lessons campaign, raising awareness of the importance of education for children affected by emergencies amongst young Europeans. Coordinated cross-sector partnerships and impact reporting.",
-      tags: ["Social Impact", "International Development", "Education"],
+        "Created sustainable solutions to real-world urban challenges in the Stockholm region with global relevance. Applied human-centred design methodology to develop innovative concepts in urban sustainability, working directly with Region Stockholm stakeholders.",
+      tags: ["Urban Development", "Design Thinking", "Region Stockholm"],
       url: undefined as string | undefined,
     },
   ],
   skills: [
     {
+      category: "Operations",
+      items: "Office management, budget ownership, vendor procurement, cost optimisation, multi-country coordination, strategic planning",
+    },
+    {
       category: "Sustainability",
-      items: "Environmental analysis, circular economy, waste management, climate policy, urban living labs, LCA",
+      items: "EU climate policy, PFAS accountability, Baltic Sea governance, circular economy, ESG strategy, environmental analysis",
     },
     {
       category: "Project Management",
-      items: "Grant writing, EU funding, stakeholder relations, cross-sector coordination, impact reporting",
-    },
-    {
-      category: "International",
-      items: "EU institutions, international development, diplomacy, multilateral organisations, UNICEF",
+      items: "Grant writing, EU & SIDA funding, stakeholder engagement, impact reporting, international coordination, policy advocacy",
     },
     {
       category: "Languages",
-      items: "Slovak (native), English (fluent), Czech (fluent), Russian (proficient), Swedish (intermediate)",
+      items: "Slovak (native), Czech (native), English (fluent), Swedish (professional), Danish & Norwegian (working knowledge)",
     },
   ],
   education: [
@@ -95,15 +102,9 @@ export const siteConfig = {
     },
     {
       period: "2019 — 2020",
-      degree: "Exchange Studies — Project Management & Peace Research",
-      institution: "University of Tampere, Finland",
-      note: "Advanced studies in project management and conflict research",
-    },
-    {
-      period: "2017 — 2021",
-      degree: "BSc International Relations & Diplomacy",
-      institution: "MGIMO University, Moscow",
-      note: "Bachelor's thesis on UN Peacekeeping Missions. Strong foundation in European affairs and international development policy.",
+      degree: "Exchange Studies — Politics & International Relations",
+      institution: "Tampere University, Finland",
+      note: "Advanced studies in political science and international relations",
     },
   ],
 };
