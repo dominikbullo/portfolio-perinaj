@@ -1,92 +1,100 @@
 export const siteConfig = {
-  name: "Ryan Fitzgerald",
-  title: "Senior Software Engineer",
-  description: "Portfolio website of Ryan Fitzgerald",
-  accentColor: "#1d4ed8",
-  social: {
-    email: "your-email@example.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
-    twitter: "https://x.com/rfitzio",
-    github: "https://github.com/RyanFitzgerald",
-  },
-  aboutMe:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quos asperiores nihil consequatur tempore cupiditate architecto natus commodi corrupti quas quasi facere est, dignissimos odit nam veniam sapiente ut, vitae eligendi ipsum dolor, nostrum ullam impedit! Corrupti ratione mollitia temporibus necessitatibus, consectetur reiciendis recusandae id, dolorum quaerat, vero pariatur. Ratione!",
-  skills: ["Javascript", "React", "Node.js", "Python", "AWS", "Docker"],
-  projects: [
-    {
-      name: "AI Dev Roundup Newsletter",
-      description:
-        "One concise email. Five minutes. Every Tuesday. Essential AI news & trends, production-ready libraries, powerful AI tools, and real-world code examples",
-      link: "https://aidevroundup.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
-    },
-    {
-      name: "Chrome Extension Mastery: Build Full-Stack Extensions with React & Node.js",
-      description:
-        "Master the art of building production-ready, full-stack Chrome Extensions using modern web technologies and best practices",
-      link: "https://fullstackextensions.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
-    },
-    {
-      name: "ExtensionKit",
-      description:
-        "Kit to jump-start your Chrome extension projects with a variety of battle-tested starter templates & examples",
-      link: "https://extensionkit.io/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
-    },
+  name: "Barbora Perinajová",
+  role: "Sustainability Project Coordinator",
+  description: "Portfolio of Barbora Perinajová — Sustainability Project Coordinator based in Stockholm, Sweden.",
+  eyebrow: "Sustainability · Environment · Impact",
+  email: "barbora@perinaj.com",
+  linkedin: "https://www.linkedin.com/in/barbora-perinajova/",
+  cvUrl: "/cv.pdf",
+  location: "Stockholm, Sweden",
+  about:
+    "Environmental scientist and sustainability professional with a background spanning international relations, urban planning, and global social change. I bridge policy and practice — from grant identification and EU funding to hands-on project coordination across the private sector, NGOs, and public institutions.",
+  aboutTags: [
+    "Environmental Science",
+    "Urban Planning",
+    "International Relations",
+    "Project Management",
+    "Grant Writing",
+    "Circular Economy",
+    "EU Policy",
+    "Sustainability",
   ],
   experience: [
     {
-      company: "Tech Company",
-      title: "Senior Software Engineer",
-      dateRange: "Jan 2022 - Present",
-      bullets: [
-        "Led development of microservices architecture serving 1M+ users",
-        "Reduced API response times by 40% through optimization",
-        "Mentored team of 5 junior developers",
-      ],
+      period: "2021 — 2023",
+      role: "Sustainability Project Coordinator",
+      company: "Balteus S.R.O.",
+      description:
+        "Coordinated initiatives processing 300 tons of non-recyclable plastics daily into sustainable products. Identified and secured EU funding for circular economy projects, and acted as liaison between technical teams, clients, and policy stakeholders.",
     },
     {
-      company: "Startup Inc",
-      title: "Full Stack Developer",
-      dateRange: "Jun 2020 - Dec 2021",
-      bullets: [
-        "Built and launched MVP product from scratch using React and Node.js",
-        "Implemented CI/CD pipeline reducing deployment time by 60%",
-        "Collaborated with product team to define technical requirements",
-      ],
+      period: "2020",
+      role: "Research Intern",
+      company: "European Parliament",
+      description:
+        "Supported environmental policy research and the preparation of legislative briefings. Analysed proposals on sustainability, climate change, and the circular economy.",
     },
     {
-      company: "Digital Agency",
-      title: "Frontend Developer",
-      dateRange: "Aug 2018 - May 2020",
-      bullets: [
-        "Developed responsive web applications for 20+ clients",
-        "Improved site performance scores by 35% on average",
-        "Introduced modern JavaScript frameworks to legacy codebases",
-      ],
+      period: "2019 — 2020",
+      role: "Project Assistant",
+      company: "Slovak Investment and Trade Development Agency",
+      description:
+        "Supported international investment promotion and cross-border project development initiatives.",
+    },
+    {
+      period: "2018 — 2019",
+      role: "Intern",
+      company: "Ministry of Foreign Affairs, Slovakia",
+      description:
+        "Contributed to international development programmes and diplomatic initiatives at the bilateral and multilateral level.",
+    },
+  ],
+  projects: [
+    {
+      name: "Non-Recyclable Plastics Initiative",
+      description:
+        "Led coordination of a large-scale circular economy operation converting 300 tons per day of non-recyclable plastic waste into sustainable products — a flagship project for the Slovak industrial sector.",
+      tags: ["Circular Economy", "Waste Management", "Project Coordination"],
+      url: undefined as string | undefined,
+    },
+    {
+      name: "UNICEF Emergency Lessons Campaign",
+      description:
+        "Contributed to UNICEF's Emergency Lessons initiative, ensuring educational continuity in crisis and conflict contexts through cross-sector coordination and structured impact reporting.",
+      tags: ["Social Impact", "International Development", "Education"],
+      url: undefined as string | undefined,
+    },
+  ],
+  skills: [
+    {
+      category: "Sustainability",
+      items: "Environmental analysis, circular economy, waste management, climate policy, life cycle assessment",
+    },
+    {
+      category: "Project Management",
+      items: "Grant writing, EU funding, stakeholder relations, cross-sector coordination, impact reporting",
+    },
+    {
+      category: "International",
+      items: "EU institutions, international development, diplomacy, multilateral organisations, UNICEF",
+    },
+    {
+      category: "Languages",
+      items: "Slovak (native), English (fluent), Czech (fluent), Russian (proficient), Swedish (intermediate)",
     },
   ],
   education: [
     {
-      school: "University Name",
-      degree: "Bachelor of Science in Computer Science",
-      dateRange: "2014 - 2018",
-      achievements: [
-        "Graduated Magna Cum Laude with 3.8 GPA",
-        "Dean's List all semesters",
-        "President of Computer Science Club",
-      ],
+      period: "2021 — 2023",
+      degree: "MSc Globalisation, Environment & Social Change",
+      institution: "Stockholm University",
+      note: "Specialisation in sustainable urban development and environmental governance",
     },
     {
-      school: "Online Platform",
-      degree: "Full Stack Development Certificate",
-      dateRange: "2019",
-      achievements: [
-        "Completed 500+ hours of coursework",
-        "Built 10+ portfolio projects",
-        "Specialized in React and Node.js",
-      ],
+      period: "2017 — 2021",
+      degree: "BSc International Relations & Diplomacy",
+      institution: "MGIMO University, Moscow",
+      note: "Focus on European affairs and international development policy",
     },
   ],
 };

@@ -1,0 +1,51 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="skills">
+  <div class="container">
+    <span class="section-label">skills</span>
+    <ul class="skills-list">
+      {siteConfig.skills.map((item) => (
+        <li class="skill-row">
+          <span class="skill-cat">{item.category}</span>
+          <span class="skill-items">{item.items}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .skills-list {
+    list-style: none;
+  }
+
+  .skill-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    align-items: baseline;
+  }
+
+  .skill-cat {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green);
+  }
+
+  .skill-items {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 580px) {
+    .skill-row {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+  }
+</style>
