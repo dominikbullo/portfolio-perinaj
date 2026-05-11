@@ -13,6 +13,13 @@ const lastName = rest.join(" ");
       <p class="subtitle">
         {siteConfig.role}<br />based in {siteConfig.location}
       </p>
+      <div class="hero-stats" aria-label="Key facts">
+        <span class="stat-pill">5 Nordic Offices</span>
+        <span class="stat-sep">·</span>
+        <span class="stat-pill">6 Languages</span>
+        <span class="stat-sep">·</span>
+        <span class="stat-pill">P&amp;L Ownership</span>
+      </div>
       <div class="cta-row">
         <a
           class="btn-primary"
@@ -114,12 +121,37 @@ const lastName = rest.join(" ");
     animation: fadeUp 0.8s 0.2s cubic-bezier(0.16,1,0.3,1) both;
   }
 
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+    animation: fadeUp 0.8s 0.28s cubic-bezier(0.16,1,0.3,1) both;
+    flex-wrap: wrap;
+  }
+
+  .stat-pill {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: rgba(249, 247, 235, 0.55);
+    background: rgba(249, 247, 235, 0.07);
+    border: 1px solid rgba(249, 247, 235, 0.14);
+    padding: 5px 14px;
+    border-radius: 100px;
+  }
+
+  .stat-sep {
+    font-size: 11px;
+    color: rgba(249, 247, 235, 0.2);
+  }
+
   .cta-row {
     display: flex;
     gap: 24px;
     align-items: center;
     flex-wrap: wrap;
-    animation: fadeUp 0.8s 0.3s cubic-bezier(0.16,1,0.3,1) both;
+    animation: fadeUp 0.8s 0.38s cubic-bezier(0.16,1,0.3,1) both;
   }
 
   .btn-primary {

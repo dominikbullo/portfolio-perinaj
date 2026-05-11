@@ -6,16 +6,22 @@ import { siteConfig } from "../config";
   <div class="container">
     <span class="section-label reveal">experience</span>
     <ul class="exp-list">
-      {siteConfig.experience.map((item, i) => (
-        <li class="exp-item reveal" style={`--delay: ${i * 0.08}s`}>
-          <span class="exp-date">{item.period}</span>
-          <div class="exp-content">
-            <p class="exp-role">{item.role}</p>
-            <p class="exp-company">{item.company}</p>
-            <p class="exp-desc">{item.description}</p>
-          </div>
-        </li>
-      ))}
+      {siteConfig.experience.map((item, i) => {
+        const isCurrent = item.period.includes('Present');
+        return (
+          <li class={`exp-item reveal${isCurrent ? ' exp-current' : ''}`} style={`--delay: ${i * 0.08}s`}>
+            <span class="exp-date">
+              {isCurrent && <span class="now-dot" aria-label="Current role"></span>}
+              {item.period}
+            </span>
+            <div class="exp-content">
+              <p class="exp-role">{item.role}</p>
+              <p class="exp-company">{item.company}</p>
+              <p class="exp-desc">{item.description}</p>
+            </div>
+          </li>
+        );
+      })}
     </ul>
   </div>
 </section>
@@ -43,12 +49,43 @@ import { siteConfig } from "../config";
     margin-right: -12px;
   }
 
+  .exp-current {
+    border-left: 2px solid var(--sage);
+    padding-left: 20px;
+    margin-left: -22px;
+  }
+
+  .exp-current:hover {
+    margin-left: -22px;
+  }
+
+  .now-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--sage);
+    margin-right: 7px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    animation: pulse 2.4s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(148, 161, 135, 0.5); }
+    50% { box-shadow: 0 0 0 5px rgba(148, 161, 135, 0); }
+  }
+
   .exp-date {
     font-size: 13px;
     color: var(--text-muted);
     font-weight: 400;
     padding-top: 4px;
     font-variant-numeric: tabular-nums;
+    display: flex;
+    align-items: flex-start;
   }
 
   .exp-role {
