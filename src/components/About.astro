@@ -9,7 +9,7 @@ import { siteConfig } from "../config";
       <p class="about-text">{siteConfig.about}</p>
       <ul class="tags">
         {siteConfig.aboutTags.map((tag, i) => (
-          <li class={`tag tag-${i % 3} reveal`} style={`--delay: ${0.15 + i * 0.05}s`}>{tag}</li>
+          <li class="tag reveal" style={`--delay: ${0.15 + i * 0.05}s`}>{tag}</li>
         ))}
       </ul>
     </div>
@@ -45,21 +45,6 @@ import { siteConfig } from "../config";
     font-weight: 400;
     background: transparent;
     transition: border-color 0.25s, color 0.25s, background 0.25s, transform 0.2s;
-  }
-
-  /* Variant 1: sage accent */
-  .tag-1 {
-    border-color: rgba(148, 161, 135, 0.45);
-    color: var(--sage);
-    background: rgba(148, 161, 135, 0.07);
-  }
-
-  /* Variant 2: green accent */
-  .tag-2 {
-    border-color: rgba(31, 76, 52, 0.3);
-    color: var(--green);
-    background: rgba(31, 76, 52, 0.05);
-    font-weight: 500;
   }
 
   .tag:hover {
