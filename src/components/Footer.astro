@@ -13,7 +13,7 @@ const year = new Date().getFullYear();
       <nav class="footer-links">
         <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href={siteConfig.cvUrl} target="_blank" rel="noopener noreferrer">Download CV</a>
+        <a href={siteConfig.cvUrl} onclick="downloadCV(event)">Download CV</a>
       </nav>
     </div>
     <p class="footer-copy">© {year} {siteConfig.name}. All rights reserved.</p>
