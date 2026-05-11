@@ -11,282 +11,392 @@ const year = new Date().getFullYear();
   <meta name="robots" content="noindex" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f9f7eb;
+      --green: #1f4c34;
+      --text-secondary: rgba(31, 76, 52, 0.65);
+      --text-muted: rgba(31, 76, 52, 0.4);
+      --border: rgba(31, 76, 52, 0.15);
+      --sage: #94A187;
+      --sage-soft: rgba(148, 161, 135, 0.15);
+      --white: #ffffff;
+      --page-max: 900px;
+      --page-pad: 56px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      font-family: 'DM Sans', system-ui, sans-serif;
-      font-size: 14px;
-      line-height: 1.5;
-      color: #1f4c34;
-      background: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--green);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
     }
 
     .page {
-      max-width: 780px;
+      max-width: var(--page-max);
       margin: 0 auto;
-      padding: 48px 48px 64px;
+      padding: 72px var(--page-pad) 96px;
     }
 
-    .print-bar {
+    /* ── Action bar ── */
+    .action-bar {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(31, 76, 52, 0.92);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      height: 56px;
       display: flex;
-      gap: 10px;
-      z-index: 10;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--page-pad);
+      max-width: 100%;
     }
 
-    .btn {
-      display: inline-flex;
+    .action-bar-inner {
+      max-width: var(--page-max);
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
       align-items: center;
-      gap: 6px;
-      padding: 10px 18px;
-      border-radius: 8px;
+      justify-content: space-between;
+    }
+
+    .btn-back {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
       font-size: 13px;
       font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      border: none;
-      font-family: inherit;
-    }
-
-    .btn-primary {
-      background: #94A187;
-      color: #fff;
-    }
-
-    .btn-secondary {
-      background: rgba(31, 76, 52, 0.08);
-      color: #1f4c34;
-    }
-
-    .cv-header {
+      transition: color 0.2s;
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding-bottom: 24px;
-      border-bottom: 2px solid #1f4c34;
-      margin-bottom: 32px;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-back:hover { color: #fff; }
+
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--sage);
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: opacity 0.2s;
+    }
+
+    .btn-print:hover { opacity: 0.85; }
+
+    /* ── CV Header ── */
+    .cv-header {
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+
+    .cv-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
     }
 
     .cv-name {
-      font-size: 28px;
+      font-size: clamp(40px, 6vw, 64px);
       font-weight: 700;
-      letter-spacing: -0.02em;
-      color: #1f4c34;
+      letter-spacing: -1.5px;
+      color: var(--green);
+      line-height: 1.05;
+      margin-bottom: 20px;
     }
 
-    .cv-title {
-      font-size: 14px;
-      color: rgba(31, 76, 52, 0.6);
-      margin-top: 4px;
+    .cv-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
     }
 
-    .cv-contact {
-      text-align: right;
-      font-size: 12px;
-      color: rgba(31, 76, 52, 0.65);
-      line-height: 1.8;
-    }
-
-    .cv-contact a {
-      color: #94A187;
+    .cv-meta-item {
+      font-size: 13px;
+      color: var(--text-muted);
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
     }
 
+    .cv-meta-item:hover { color: var(--green); }
+
+    .cv-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    /* ── Sections ── */
     .cv-section {
-      margin-bottom: 28px;
+      padding-top: 56px;
     }
 
-    .cv-section-title {
+    .section-label {
+      display: block;
       font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(31, 76, 52, 0.45);
-      margin-bottom: 12px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid rgba(31, 76, 52, 0.12);
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: lowercase;
+      color: var(--text-muted);
+      margin-bottom: 32px;
     }
 
-    .cv-about {
-      color: rgba(31, 76, 52, 0.7);
+    /* ── About ── */
+    .cv-about-text {
+      font-size: clamp(16px, 2vw, 18px);
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+
+    /* ── Skills / Experience / Education rows ── */
+    .cv-rows {
+      list-style: none;
+    }
+
+    .cv-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 32px;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .cv-row-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 400;
+      padding-top: 3px;
+      font-variant-numeric: tabular-nums;
+      line-height: 1.5;
+    }
+
+    .cv-row-content {}
+
+    /* Skills row: category is the left label */
+    .cv-row-cat {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--green);
+      padding-top: 3px;
+    }
+
+    .cv-row-items {
+      font-size: 14px;
+      color: var(--text-secondary);
       line-height: 1.7;
     }
 
-    .cv-skills-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .cv-skill-row {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 16px;
-      font-size: 13px;
-    }
-
-    .cv-skill-category {
+    /* Experience / Education */
+    .cv-row-role {
+      font-size: 16px;
       font-weight: 600;
-      color: #1f4c34;
+      color: var(--green);
+      margin-bottom: 3px;
     }
 
-    .cv-skill-items {
-      color: rgba(31, 76, 52, 0.7);
-    }
-
-    .cv-entries {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .cv-entry-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 4px;
-    }
-
-    .cv-entry-role {
-      font-weight: 600;
-      color: #1f4c34;
+    .cv-row-org {
       font-size: 14px;
-    }
-
-    .cv-entry-period {
-      font-size: 12px;
-      color: rgba(31, 76, 52, 0.45);
-      white-space: nowrap;
-    }
-
-    .cv-entry-company {
-      color: #94A187;
-      font-size: 13px;
-      margin-top: 1px;
+      color: var(--sage);
       font-weight: 500;
+      margin-bottom: 10px;
     }
 
-    .cv-entry-desc {
-      margin-top: 6px;
-      color: rgba(31, 76, 52, 0.65);
+    .cv-row-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .cv-row-note {
       font-size: 13px;
+      color: var(--text-muted);
       line-height: 1.6;
-    }
-
-    .cv-entry-note {
-      margin-top: 4px;
-      color: rgba(31, 76, 52, 0.5);
-      font-size: 12px;
       font-style: italic;
     }
 
+    /* ── Footer ── */
     .cv-footer {
-      margin-top: 40px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(31, 76, 52, 0.12);
-      font-size: 11px;
-      color: rgba(31, 76, 52, 0.35);
+      margin-top: 72px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
+    .cv-footer-left {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .cv-footer-right {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ── Print ── */
     @media print {
-      .print-bar { display: none; }
-      body { font-size: 12px; }
+      :root {
+        --bg: #fff;
+        --page-pad: 0px;
+      }
+
+      @page {
+        margin: 18mm 18mm 18mm 18mm;
+      }
+
+      body { background: #fff; font-size: 12px; }
+      .action-bar { display: none; }
       .page { padding: 0; max-width: 100%; }
-      .cv-name { font-size: 22px; }
-      a { color: inherit !important; }
+      .cv-name { font-size: 32px; letter-spacing: -0.5px; }
+      .cv-section { padding-top: 32px; }
+      .cv-row { padding: 16px 0; }
+      a { color: inherit !important; text-decoration: none !important; }
     }
 
+    /* ── Responsive ── */
     @media (max-width: 640px) {
-      .page { padding: 32px 24px 48px; }
-      .cv-header { flex-direction: column; gap: 16px; }
-      .cv-contact { text-align: left; }
-      .cv-skill-row { grid-template-columns: 1fr; gap: 2px; }
+      :root { --page-pad: 24px; }
+
+      .page { padding-top: 72px; }
+
+      .action-bar { padding: 0 24px; }
+
+      .cv-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .cv-row-label { padding-top: 0; }
+
+      .cv-meta { gap: 12px; }
+      .cv-meta-dot { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <div class="print-bar">
-    <a href="/" class="btn btn-secondary">← Back</a>
-    <button onclick="window.print()" class="btn btn-primary">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
-      Save as PDF
-    </button>
+  <div class="action-bar">
+    <div class="action-bar-inner">
+      <a href="/" class="btn-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 5-7 7 7 7"/></svg>
+        Back
+      </a>
+      <button onclick="window.print()" class="btn-print">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+        Save as PDF
+      </button>
+    </div>
   </div>
 
   <div class="page">
 
+    <!-- Header -->
     <header class="cv-header">
-      <div>
-        <div class="cv-name">{siteConfig.name}</div>
-        <div class="cv-title">{siteConfig.role} · {siteConfig.location}</div>
-      </div>
-      <div class="cv-contact">
-        <div><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></div>
-        <div>{siteConfig.phone}</div>
-        <div><a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/barboraperinajova</a></div>
-        <div><a href="https://perinaj.com">perinaj.com</a></div>
+      <p class="cv-eyebrow">{siteConfig.eyebrow}</p>
+      <h1 class="cv-name">{siteConfig.name}</h1>
+      <div class="cv-meta">
+        <a href={`mailto:${siteConfig.email}`} class="cv-meta-item">{siteConfig.email}</a>
+        <span class="cv-meta-dot"></span>
+        <span class="cv-meta-item">{siteConfig.phone}</span>
+        <span class="cv-meta-dot"></span>
+        <span class="cv-meta-item">{siteConfig.location}</span>
+        <span class="cv-meta-dot"></span>
+        <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" class="cv-meta-item">LinkedIn →</a>
       </div>
     </header>
 
+    <!-- Profile -->
     <section class="cv-section">
-      <div class="cv-section-title">Profile</div>
-      <p class="cv-about">{siteConfig.about}</p>
+      <span class="section-label">profile</span>
+      <p class="cv-about-text">{siteConfig.about}</p>
     </section>
 
+    <!-- Skills -->
     <section class="cv-section">
-      <div class="cv-section-title">Skills</div>
-      <div class="cv-skills-grid">
-        {siteConfig.skills.map((skill) => (
-          <div class="cv-skill-row">
-            <span class="cv-skill-category">{skill.category}</span>
-            <span class="cv-skill-items">{skill.items}</span>
-          </div>
+      <span class="section-label">skills</span>
+      <ul class="cv-rows">
+        {siteConfig.skills.map((s) => (
+          <li class="cv-row">
+            <span class="cv-row-cat">{s.category}</span>
+            <span class="cv-row-items">{s.items}</span>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
 
+    <!-- Experience -->
     <section class="cv-section">
-      <div class="cv-section-title">Experience</div>
-      <div class="cv-entries">
-        {siteConfig.experience.map((exp) => (
-          <div class="cv-entry">
-            <div class="cv-entry-header">
-              <div class="cv-entry-role">{exp.role}</div>
-              <div class="cv-entry-period">{exp.period}</div>
+      <span class="section-label">experience</span>
+      <ul class="cv-rows">
+        {siteConfig.experience.map((e) => (
+          <li class="cv-row">
+            <span class="cv-row-label">{e.period}</span>
+            <div class="cv-row-content">
+              <p class="cv-row-role">{e.role}</p>
+              <p class="cv-row-org">{e.company}</p>
+              <p class="cv-row-desc">{e.description}</p>
             </div>
-            <div class="cv-entry-company">{exp.company}</div>
-            <p class="cv-entry-desc">{exp.description}</p>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
 
+    <!-- Education -->
     <section class="cv-section">
-      <div class="cv-section-title">Education</div>
-      <div class="cv-entries">
-        {siteConfig.education.map((edu) => (
-          <div class="cv-entry">
-            <div class="cv-entry-header">
-              <div class="cv-entry-role">{edu.degree}</div>
-              <div class="cv-entry-period">{edu.period}</div>
+      <span class="section-label">education</span>
+      <ul class="cv-rows">
+        {siteConfig.education.map((e) => (
+          <li class="cv-row">
+            <span class="cv-row-label">{e.period}</span>
+            <div class="cv-row-content">
+              <p class="cv-row-role">{e.degree}</p>
+              <p class="cv-row-org">{e.institution}</p>
+              {e.note && <p class="cv-row-note">{e.note}</p>}
             </div>
-            <div class="cv-entry-company">{edu.institution}</div>
-            {edu.note && <p class="cv-entry-note">{edu.note}</p>}
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
 
     <footer class="cv-footer">
-      <span>perinaj.com</span>
-      <span>© {year} {siteConfig.name}</span>
+      <span class="cv-footer-left">perinaj.com</span>
+      <span class="cv-footer-right">© {year} {siteConfig.name}</span>
     </footer>
 
   </div>
