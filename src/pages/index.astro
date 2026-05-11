@@ -51,112 +51,264 @@ import "../styles/global.css";
       rel="stylesheet"
     />
 
-    <!-- JSON-LD structured data -->
+    <!-- JSON-LD structured data — @graph with linked entities -->
     <script type="application/ld+json" is:inline>{JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Barbora Perinajová",
-      "alternateName": ["Barbora Perinajova", "Barbora Perinaj"],
-      "jobTitle": "Nordic Operations Manager",
-      "description": "Nordic Operations Manager at Nordcloud, an IBM Company, responsible for 5 Nordic offices across Sweden, Denmark, and Norway with full P&L ownership. Sustainability advocate and EU climate policy expert; elected member, Baltic Sea Region Youth Forum Climate & Environment Working Group; invited speaker at European Commission pre-COP30 workshop (Brussels, 2024) and CBSS Youth Ministerial (Warsaw, 2024). Former European Parliament Schuman Trainee (Agriculture & Trade Committees). MSc Globalisation, Environment & Social Change, Stockholm University (2023). Fluent in Swedish, English, Czech, Slovak, Danish, and Norwegian.",
-      "url": "https://perinaj.com",
-      "email": siteConfig.email,
-      "telephone": siteConfig.phone,
-      "image": "https://perinaj.com/barbora.jpg",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Nordcloud, an IBM Company",
-        "url": "https://nordcloud.com",
-        "parentOrganization": {
-          "@type": "Organization",
-          "name": "IBM",
-          "url": "https://ibm.com"
-        }
-      },
-      "hasOccupation": {
-        "@type": "Occupation",
-        "name": "Operations Manager",
-        "occupationLocation": { "@type": "Country", "name": "Sweden" },
-        "description": "P&L ownership for 5 Nordic offices; vendor contract management, sustainability procurement, cross-border operations across Sweden, Denmark, and Norway"
-      },
-      "memberOf": [
+      "@graph": [
+
+        /* ── Website ── */
         {
-          "@type": "Organization",
-          "name": "Baltic Sea Region Youth Forum",
-          "description": "Elected member, Climate & Environment Working Group — PFAS regulation and EU nature restoration policy advocacy"
+          "@type": "WebSite",
+          "@id": "https://perinaj.com/#website",
+          "url": "https://perinaj.com",
+          "name": "Barbora Perinajová",
+          "description": "Personal portfolio and professional profile of Barbora Perinajová, Nordic Operations Manager at Nordcloud (IBM), Stockholm.",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://perinaj.com/#person" }
         },
+
+        /* ── ProfilePage ── */
+        {
+          "@type": "ProfilePage",
+          "@id": "https://perinaj.com/#webpage",
+          "url": "https://perinaj.com",
+          "name": "Barbora Perinajová — Nordic Operations Manager · IBM · Stockholm",
+          "description": "Nordic Operations Manager at Nordcloud (IBM). P&L lead for 5 Nordic offices. EU Commission speaker. Baltic Sea Region Youth Forum. MSc Stockholm University. 6 languages.",
+          "inLanguage": "en",
+          "isPartOf": { "@id": "https://perinaj.com/#website" },
+          "about": { "@id": "https://perinaj.com/#person" },
+          "mainEntity": { "@id": "https://perinaj.com/#person" },
+          "datePublished": "2025-05-11",
+          "dateModified": "2026-05-11"
+        },
+
+        /* ── Person ── */
+        {
+          "@type": "Person",
+          "@id": "https://perinaj.com/#person",
+          "name": "Barbora Perinajová",
+          "alternateName": ["Barbora Perinajova", "Barbora Perinaj"],
+          "givenName": "Barbora",
+          "familyName": "Perinajová",
+          "jobTitle": "Nordic Operations Manager",
+          "description": "Nordic Operations Manager at Nordcloud, an IBM Company — sole operational lead for 5 Nordic offices (Stockholm, Gothenburg, Malmö, Copenhagen, Oslo) with full P&L ownership. Sustainability advocate; elected member of Baltic Sea Region Youth Forum Climate & Environment Working Group; invited speaker at European Commission pre-COP30 workshop (Brussels 2024) and CBSS Youth Ministerial (Warsaw 2024). Former European Parliament trainee (Agriculture & Trade Committees, Brussels). MSc Globalisation, Environment & Social Change, Stockholm University (2023). Fluent in 6 languages: Swedish, English, Czech, Slovak, Danish, Norwegian.",
+          "url": "https://perinaj.com",
+          "email": siteConfig.email,
+          "telephone": siteConfig.phone,
+          "image": {
+            "@type": "ImageObject",
+            "@id": "https://perinaj.com/#person-image",
+            "url": "https://perinaj.com/barbora.jpg",
+            "contentUrl": "https://perinaj.com/barbora.jpg",
+            "width": 800,
+            "height": 800,
+            "caption": "Barbora Perinajová — Nordic Operations Manager"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Stockholm",
+            "addressRegion": "Stockholm County",
+            "addressCountry": "SE"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "professional",
+            "email": siteConfig.email,
+            "telephone": siteConfig.phone,
+            "availableLanguage": ["Swedish", "English", "Czech", "Slovak"]
+          },
+          "worksFor": { "@id": "https://perinaj.com/#nordcloud" },
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Operations Manager",
+            "occupationLocation": { "@type": "Country", "name": "Sweden" },
+            "description": "Full P&L ownership for 5 Nordic offices; vendor contract management, sustainability-aligned procurement, cross-border operations across Sweden, Denmark, and Norway"
+          },
+          /* Work history via EmployeeRole */
+          "memberOf": [
+            {
+              "@type": "EmployeeRole",
+              "@id": "https://perinaj.com/#role-nordcloud",
+              "roleName": "Nordic Operations Manager",
+              "startDate": "2025-10",
+              "description": "Sole P&L lead for IBM's 5 Nordic offices across SE/DK/NO; budget forecasting, vendor negotiations, sustainability procurement, ESG compliance",
+              "memberOf": { "@id": "https://perinaj.com/#nordcloud" }
+            },
+            {
+              "@type": "EmployeeRole",
+              "@id": "https://perinaj.com/#role-ep",
+              "roleName": "Parliamentary Trainee",
+              "startDate": "2020-08",
+              "endDate": "2021-01",
+              "description": "Competitive EU traineeship — Committees on Agriculture, Rural Development and International Trade. Legislative analysis on Farm to Fork Strategy, circular economy, trade. Fewer than 300 trainees selected EU-wide per intake.",
+              "memberOf": {
+                "@type": "Organization",
+                "@id": "https://perinaj.com/#european-parliament",
+                "name": "European Parliament",
+                "url": "https://www.europarl.europa.eu",
+                "sameAs": "https://www.wikidata.org/wiki/Q8889"
+              }
+            },
+            {
+              "@type": "OrganizationRole",
+              "@id": "https://perinaj.com/#role-bsryf",
+              "roleName": "Climate & Environment Working Group Member",
+              "description": "Elected member advocating for PFAS accountability and EU nature restoration policy at intergovernmental level",
+              "memberOf": { "@id": "https://perinaj.com/#bsryf" }
+            }
+          ],
+          "alumniOf": [
+            {
+              "@type": "CollegeOrUniversity",
+              "@id": "https://www.su.se",
+              "name": "Stockholm University",
+              "url": "https://www.su.se",
+              "sameAs": "https://www.wikidata.org/wiki/Q221645"
+            },
+            {
+              "@type": "CollegeOrUniversity",
+              "@id": "https://www.tuni.fi",
+              "name": "Tampere University",
+              "url": "https://www.tuni.fi",
+              "sameAs": "https://www.wikidata.org/wiki/Q1105677"
+            }
+          ],
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "MSc Globalisation, Environment & Social Change",
+              "credentialCategory": "degree",
+              "educationalLevel": "Master",
+              "dateCreated": "2023",
+              "recognizedBy": { "@id": "https://www.su.se" }
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "European Parliament Traineeship",
+              "credentialCategory": "training",
+              "recognizedBy": { "@id": "https://perinaj.com/#european-parliament" }
+            }
+          ],
+          "award": [
+            "European Commission Pre-COP30 Workshop Speaker, Brussels 2024",
+            "CBSS Youth Ministerial Speaker, Warsaw 2024"
+          ],
+          "performerIn": [
+            { "@id": "https://perinaj.com/#event-cop30-workshop" },
+            { "@id": "https://perinaj.com/#event-cbss-ministerial" }
+          ],
+          "sameAs": [siteConfig.linkedin],
+          "knowsLanguage": [
+            { "@type": "Language", "name": "Swedish", "alternateName": "sv" },
+            { "@type": "Language", "name": "English", "alternateName": "en" },
+            { "@type": "Language", "name": "Czech", "alternateName": "cs" },
+            { "@type": "Language", "name": "Slovak", "alternateName": "sk" },
+            { "@type": "Language", "name": "Danish", "alternateName": "da" },
+            { "@type": "Language", "name": "Norwegian", "alternateName": "no" }
+          ],
+          "knowsAbout": [
+            "Nordic Operations Management", "P&L Ownership",
+            "Multi-site Facilities Management", "Vendor Contract Management",
+            "Procurement Strategy", "Budget Forecasting", "Cost Control",
+            "Workplace Strategy", "Cross-border Operations",
+            "EU Green Deal", "EU Climate Policy", "PFAS Regulation",
+            "Baltic Sea Action Plan", "Baltic Sea Governance",
+            "Circular Economy", "Nature Restoration Policy",
+            "Sustainability Strategy", "ESG", "Climate Finance",
+            "EU Structural Funds", "SIDA Funding", "Grant Management",
+            "Stakeholder Engagement", "Policy Analysis",
+            "Multi-stakeholder Facilitation", "Institutional Fundraising",
+            "IBM", "Nordcloud", "Nordic Market", "Sweden", "Stockholm"
+          ]
+        },
+
+        /* ── Nordcloud / IBM ── */
         {
           "@type": "Organization",
-          "name": "Council of the Baltic Sea States (CBSS) Youth Advisory Network"
-        }
-      ],
-      "award": [
-        "European Commission pre-COP30 Workshop Speaker, Brussels 2024",
-        "CBSS Youth Ministerial Speaker, Warsaw 2024"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Stockholm",
-        "addressRegion": "Stockholm County",
-        "addressCountry": "SE"
-      },
-      "sameAs": [siteConfig.linkedin],
-      "knowsLanguage": [
-        { "@type": "Language", "name": "Swedish", "alternateName": "sv" },
-        { "@type": "Language", "name": "English", "alternateName": "en" },
-        { "@type": "Language", "name": "Czech", "alternateName": "cs" },
-        { "@type": "Language", "name": "Slovak", "alternateName": "sk" },
-        { "@type": "Language", "name": "Danish", "alternateName": "da" },
-        { "@type": "Language", "name": "Norwegian", "alternateName": "no" }
-      ],
-      "alumniOf": [
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "Stockholm University",
-          "url": "https://www.su.se"
-        },
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "Tampere University",
-          "url": "https://www.tuni.fi"
-        }
-      ],
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "MSc Globalisation, Environment & Social Change",
-          "credentialCategory": "degree",
-          "educationalLevel": "Master",
-          "dateCreated": "2023",
-          "recognizedBy": {
-            "@type": "CollegeOrUniversity",
-            "name": "Stockholm University"
-          }
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          "name": "European Parliament Traineeship",
-          "credentialCategory": "training",
-          "recognizedBy": {
+          "@id": "https://perinaj.com/#nordcloud",
+          "name": "Nordcloud, an IBM Company",
+          "url": "https://nordcloud.com",
+          "sameAs": "https://nordcloud.com",
+          "parentOrganization": {
             "@type": "Organization",
-            "name": "European Parliament",
-            "url": "https://www.europarl.europa.eu"
+            "@id": "https://perinaj.com/#ibm",
+            "name": "IBM",
+            "legalName": "International Business Machines Corporation",
+            "url": "https://ibm.com",
+            "sameAs": [
+              "https://www.wikidata.org/wiki/Q37156",
+              "https://ibm.com"
+            ]
           }
+        },
+
+        /* ── Baltic Sea Region Youth Forum ── */
+        {
+          "@type": "Organization",
+          "@id": "https://perinaj.com/#bsryf",
+          "name": "Baltic Sea Region Youth Forum",
+          "description": "CBSS-affiliated intergovernmental youth governance forum covering 11 Baltic Sea states; Climate & Environment Working Group focuses on PFAS regulation and EU nature restoration policy",
+          "memberOf": {
+            "@type": "Organization",
+            "name": "Council of the Baltic Sea States (CBSS)",
+            "url": "https://cbss.org"
+          }
+        },
+
+        /* ── Event: EU Commission Pre-COP30 ── */
+        {
+          "@type": "Event",
+          "@id": "https://perinaj.com/#event-cop30-workshop",
+          "name": "European Commission Pre-COP30 Climate Workshop",
+          "description": "High-level European Commission workshop on EU climate policy, PFAS regulation, and nature restoration ahead of COP30. Baltic Sea Region Youth Forum delegates presented youth recommendations to EU officials.",
+          "startDate": "2024",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "European Commission, Brussels",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Brussels",
+              "addressCountry": "BE"
+            }
+          },
+          "organizer": {
+            "@type": "Organization",
+            "name": "European Commission",
+            "url": "https://ec.europa.eu",
+            "sameAs": "https://www.wikidata.org/wiki/Q8880"
+          },
+          "performer": { "@id": "https://perinaj.com/#person" },
+          "about": ["PFAS regulation", "EU Climate Policy", "Nature Restoration", "COP30"]
+        },
+
+        /* ── Event: CBSS Youth Ministerial Warsaw ── */
+        {
+          "@type": "Event",
+          "@id": "https://perinaj.com/#event-cbss-ministerial",
+          "name": "CBSS Youth Ministerial",
+          "description": "Council of the Baltic Sea States Youth Ministerial in Warsaw — Baltic Sea Region Youth Forum delegates shaped intergovernmental recommendations on climate, digitalisation, and Baltic Sea connectivity.",
+          "startDate": "2024",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Warsaw",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Warsaw",
+              "addressCountry": "PL"
+            }
+          },
+          "organizer": {
+            "@type": "Organization",
+            "name": "Council of the Baltic Sea States (CBSS)",
+            "url": "https://cbss.org"
+          },
+          "performer": { "@id": "https://perinaj.com/#person" }
         }
-      ],
-      "knowsAbout": [
-        "Nordic Operations Management", "P&L Ownership",
-        "Multi-site Facilities Management", "Vendor Contract Management",
-        "Procurement Strategy", "Budget Forecasting", "Cost Control",
-        "Workplace Strategy", "Cross-border Operations",
-        "EU Green Deal", "EU Climate Policy", "PFAS Regulation",
-        "Baltic Sea Action Plan", "Baltic Sea Governance",
-        "Circular Economy", "Nature Restoration Policy",
-        "Sustainability Strategy", "ESG", "Climate Finance",
-        "EU Structural Funds", "Grant Management", "SIDA Funding",
-        "Stakeholder Engagement", "Policy Analysis",
-        "Multi-stakeholder Facilitation", "Institutional Fundraising",
-        "IBM", "Nordcloud", "Nordic Market", "Sweden", "Stockholm"
+
       ]
     })}</script>
     <script is:inline>
