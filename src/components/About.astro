@@ -5,49 +5,20 @@ import { siteConfig } from "../config";
 <section id="about">
   <div class="container">
     <span class="section-label">about</span>
-    <div class="about-grid">
-      <div class="about-photo-col">
-        <div class="photo-wrap">
-          <img
-            src={siteConfig.profilePhoto}
-            alt={siteConfig.name}
-            class="profile-photo"
-            loading="lazy"
-          />
-        </div>
-      </div>
-      <div class="about-content-col">
-        <p class="about-text">{siteConfig.about}</p>
-        <ul class="tags">
-          {siteConfig.aboutTags.map((tag) => (
-            <li class="tag">{tag}</li>
-          ))}
-        </ul>
-      </div>
+    <div class="about-content">
+      <p class="about-text">{siteConfig.about}</p>
+      <ul class="tags">
+        {siteConfig.aboutTags.map((tag) => (
+          <li class="tag">{tag}</li>
+        ))}
+      </ul>
     </div>
   </div>
 </section>
 
 <style>
-  .about-grid {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 56px;
-    align-items: start;
-  }
-
-  .photo-wrap {
-    position: sticky;
-    top: 80px;
-  }
-
-  .profile-photo {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-    filter: saturate(0.9);
+  .about-content {
+    max-width: 680px;
   }
 
   .about-text {
@@ -80,17 +51,5 @@ import { siteConfig } from "../config";
     border-color: var(--sage);
     color: var(--green);
     background: var(--sage-soft);
-  }
-
-  @media (max-width: 680px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-
-    .photo-wrap {
-      position: static;
-      max-width: 200px;
-    }
   }
 </style>
