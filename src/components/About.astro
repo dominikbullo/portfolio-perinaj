@@ -4,12 +4,12 @@ import { siteConfig } from "../config";
 
 <section id="about">
   <div class="container">
-    <span class="section-label">about</span>
-    <div class="about-content">
+    <span class="section-label reveal">about</span>
+    <div class="about-content reveal" style="--delay: 0.1s">
       <p class="about-text">{siteConfig.about}</p>
       <ul class="tags">
-        {siteConfig.aboutTags.map((tag) => (
-          <li class="tag">{tag}</li>
+        {siteConfig.aboutTags.map((tag, i) => (
+          <li class="tag reveal" style={`--delay: ${0.15 + i * 0.05}s`}>{tag}</li>
         ))}
       </ul>
     </div>
@@ -44,12 +44,13 @@ import { siteConfig } from "../config";
     font-size: 13px;
     font-weight: 400;
     background: transparent;
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    transition: border-color 0.25s, color 0.25s, background 0.25s, transform 0.2s;
   }
 
   .tag:hover {
     border-color: var(--sage);
     color: var(--green);
     background: var(--sage-soft);
+    transform: translateY(-1px);
   }
 </style>

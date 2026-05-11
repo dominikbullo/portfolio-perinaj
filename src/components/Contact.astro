@@ -4,15 +4,15 @@ import { siteConfig } from "../config";
 
 <section id="contact">
   <div class="container">
-    <span class="section-label">contact</span>
+    <span class="section-label reveal">contact</span>
     <div class="contact-grid">
-      <div class="contact-text">
+      <div class="contact-text reveal">
         <h2 class="contact-heading">Let's work together</h2>
         <p class="contact-sub">
           Connect via email, phone, or schedule a meeting directly.
         </p>
       </div>
-      <div class="contact-actions">
+      <div class="contact-actions reveal" style="--delay: 0.12s">
         <a
           class="btn-book"
           data-cal-link={siteConfig.meetingUrl}
@@ -84,19 +84,20 @@ import { siteConfig } from "../config";
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, transform 0.2s;
     cursor: pointer;
     align-self: flex-start;
   }
 
   .btn-book:hover {
     opacity: 0.85;
+    transform: translateY(-2px);
   }
 
   .contact-links {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 0;
   }
 
   .contact-link {
@@ -104,14 +105,20 @@ import { siteConfig } from "../config";
     justify-content: space-between;
     align-items: baseline;
     text-decoration: none;
-    padding-bottom: 16px;
+    padding: 16px 0;
     border-bottom: 1px solid var(--border);
     gap: 16px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, background 0.2s;
+    border-radius: 4px;
   }
 
   .contact-link:hover {
     border-color: var(--sage);
+    background: var(--sage-soft);
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-right: -10px;
   }
 
   .contact-link-label {
@@ -128,6 +135,7 @@ import { siteConfig } from "../config";
     color: var(--green);
     font-weight: 500;
     text-align: right;
+    transition: color 0.2s;
   }
 
   .contact-link:hover .contact-link-value {

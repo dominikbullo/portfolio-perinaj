@@ -4,10 +4,10 @@ import { siteConfig } from "../config";
 
 <section id="skills">
   <div class="container">
-    <span class="section-label">skills</span>
+    <span class="section-label reveal">skills</span>
     <ul class="skills-list">
-      {siteConfig.skills.map((item) => (
-        <li class="skill-row">
+      {siteConfig.skills.map((item, i) => (
+        <li class="skill-row reveal" style={`--delay: ${i * 0.08}s`}>
           <span class="skill-cat">{item.category}</span>
           <span class="skill-items">{item.items}</span>
         </li>
@@ -28,6 +28,16 @@ import { siteConfig } from "../config";
     padding: 20px 0;
     border-top: 1px solid var(--border);
     align-items: baseline;
+    transition: background 0.2s;
+    border-radius: 4px;
+  }
+
+  .skill-row:hover {
+    background: var(--sage-soft);
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: -12px;
+    margin-right: -12px;
   }
 
   .skill-cat {

@@ -71,10 +71,26 @@ import { siteConfig } from "../config";
     text-decoration: none;
     letter-spacing: 0.2px;
     transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.6);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .nav-links a:hover {
     color: #fff;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
   }
 
   .cv-btn {

@@ -4,10 +4,10 @@ import { siteConfig } from "../config";
 
 <section id="education">
   <div class="container">
-    <span class="section-label">education</span>
+    <span class="section-label reveal">education</span>
     <ul class="edu-list">
-      {siteConfig.education.map((item) => (
-        <li class="edu-item">
+      {siteConfig.education.map((item, i) => (
+        <li class="edu-item reveal" style={`--delay: ${i * 0.08}s`}>
           <span class="edu-date">{item.period}</span>
           <div class="edu-content">
             <p class="edu-degree">{item.degree}</p>
@@ -31,6 +31,16 @@ import { siteConfig } from "../config";
     gap: 32px;
     padding: 28px 0;
     border-top: 1px solid var(--border);
+    transition: background 0.2s;
+    border-radius: 4px;
+  }
+
+  .edu-item:hover {
+    background: var(--sage-soft);
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-left: -12px;
+    margin-right: -12px;
   }
 
   .edu-date {
@@ -50,8 +60,9 @@ import { siteConfig } from "../config";
 
   .edu-institution {
     font-size: 14px;
-    color: var(--text-secondary);
+    color: var(--sage);
     margin-bottom: 8px;
+    font-weight: 500;
   }
 
   .edu-note {

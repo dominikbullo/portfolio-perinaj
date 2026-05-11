@@ -5,31 +5,42 @@ const lastName = rest.join(" ");
 ---
 
 <section id="hero">
+  <div class="glow"></div>
   <div class="hero-inner container">
-    <p class="eyebrow">{siteConfig.eyebrow}</p>
-    <h1 class="name">{firstName}<br />{lastName}</h1>
-    <p class="subtitle">
-      {siteConfig.role}<br />based in {siteConfig.location}
-    </p>
-    <div class="cta-row">
-      <a
-        class="btn-primary"
-        data-cal-link={siteConfig.meetingUrl}
-        data-cal-config='{"layout":"month_view"}'
-        href="#"
-        onclick="return false"
-      >
-        Book a meeting
-      </a>
-      <a href={`mailto:${siteConfig.email}`} class="btn-link">{siteConfig.email}</a>
-      <a
-        href={siteConfig.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-link"
-      >
-        LinkedIn →
-      </a>
+    <div class="hero-text">
+      <p class="eyebrow">{siteConfig.eyebrow}</p>
+      <h1 class="name">{firstName}<br />{lastName}</h1>
+      <p class="subtitle">
+        {siteConfig.role}<br />based in {siteConfig.location}
+      </p>
+      <div class="cta-row">
+        <a
+          class="btn-primary"
+          data-cal-link={siteConfig.meetingUrl}
+          data-cal-config='{"layout":"month_view"}'
+          href="#"
+          onclick="return false"
+        >
+          Book a meeting
+        </a>
+        <a href={`mailto:${siteConfig.email}`} class="btn-link">{siteConfig.email}</a>
+        <a
+          href={siteConfig.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-link"
+        >
+          LinkedIn →
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img
+        src={siteConfig.profilePhoto}
+        alt={siteConfig.name}
+        class="hero-photo"
+        loading="eager"
+      />
     </div>
   </div>
 </section>
@@ -44,37 +55,63 @@ const lastName = rest.join(" ");
     top: 0;
     z-index: 1;
     border-bottom: none;
+    overflow: hidden;
+  }
+
+  /* Subtle ambient glow */
+  .glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 10% 60%, rgba(148, 161, 135, 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 50% at 85% 15%, rgba(249, 247, 235, 0.04) 0%, transparent 50%);
+    animation: breathe 10s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes breathe {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
   }
 
   .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 64px;
+    align-items: center;
     padding-top: 80px;
     padding-bottom: 80px;
+    position: relative;
   }
 
+  /* ── Load animations ── */
   .eyebrow {
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: rgba(249, 247, 235, 0.45);
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+    animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) both;
   }
 
   .name {
-    font-size: clamp(52px, 8vw, 80px);
+    font-size: clamp(48px, 7vw, 76px);
     font-weight: 700;
     line-height: 1.0;
     letter-spacing: -2px;
     color: #f9f7eb;
     margin-bottom: 24px;
+    animation: fadeUp 0.8s 0.1s cubic-bezier(0.16,1,0.3,1) both;
   }
 
   .subtitle {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
     color: rgba(249, 247, 235, 0.6);
-    line-height: 1.6;
-    margin-bottom: 48px;
+    line-height: 1.65;
+    margin-bottom: 44px;
+    animation: fadeUp 0.8s 0.2s cubic-bezier(0.16,1,0.3,1) both;
   }
 
   .cta-row {
@@ -82,6 +119,7 @@ const lastName = rest.join(" ");
     gap: 24px;
     align-items: center;
     flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s cubic-bezier(0.16,1,0.3,1) both;
   }
 
   .btn-primary {
@@ -92,13 +130,14 @@ const lastName = rest.join(" ");
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, transform 0.2s;
     cursor: pointer;
     display: inline-block;
   }
 
   .btn-primary:hover {
-    opacity: 0.85;
+    opacity: 0.88;
+    transform: translateY(-1px);
   }
 
   .btn-link {
@@ -108,11 +147,84 @@ const lastName = rest.join(" ");
     font-weight: 500;
     border-bottom: 1px solid rgba(249, 247, 235, 0.2);
     padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s;
+    transition: color 0.25s, border-color 0.25s;
   }
 
   .btn-link:hover {
     color: #f9f7eb;
     border-color: rgba(249, 247, 235, 0.6);
+  }
+
+  /* ── Photo ── */
+  .hero-photo-wrap {
+    position: relative;
+    animation: fadePhoto 1s 0.25s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  .hero-photo-wrap::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, var(--green) 0%, transparent 100%);
+    border-radius: 0 0 16px 16px;
+    pointer-events: none;
+  }
+
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 16px;
+    display: block;
+    filter: saturate(0.85);
+  }
+
+  /* ── Keyframes ── */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(4px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+  }
+
+  @keyframes fadePhoto {
+    from {
+      opacity: 0;
+      transform: translateY(24px) scale(0.97);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .hero-photo-wrap {
+      max-width: 200px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .eyebrow, .name, .subtitle, .cta-row, .hero-photo-wrap {
+      animation: none;
+    }
+    .glow { animation: none; }
   }
 </style>
