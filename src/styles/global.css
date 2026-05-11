@@ -8,6 +8,8 @@
   --text-secondary: rgba(31, 76, 52, 0.65);
   --text-muted: rgba(31, 76, 52, 0.4);
   --border: rgba(31, 76, 52, 0.15);
+  --sage: #94A187;
+  --sage-soft: rgba(148, 161, 135, 0.15);
   --white: #ffffff;
   --container-max: 960px;
   --container-pad: 48px;

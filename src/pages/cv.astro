@@ -1,0 +1,294 @@
+---
+import { siteConfig } from "../config";
+const year = new Date().getFullYear();
+---
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{siteConfig.name} — CV</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #1f4c34;
+      background: #fff;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 48px 64px;
+    }
+
+    .print-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: #94A187;
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: rgba(31, 76, 52, 0.08);
+      color: #1f4c34;
+    }
+
+    .cv-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 24px;
+      border-bottom: 2px solid #1f4c34;
+      margin-bottom: 32px;
+    }
+
+    .cv-name {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #1f4c34;
+    }
+
+    .cv-title {
+      font-size: 14px;
+      color: rgba(31, 76, 52, 0.6);
+      margin-top: 4px;
+    }
+
+    .cv-contact {
+      text-align: right;
+      font-size: 12px;
+      color: rgba(31, 76, 52, 0.65);
+      line-height: 1.8;
+    }
+
+    .cv-contact a {
+      color: #94A187;
+      text-decoration: none;
+    }
+
+    .cv-section {
+      margin-bottom: 28px;
+    }
+
+    .cv-section-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(31, 76, 52, 0.45);
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(31, 76, 52, 0.12);
+    }
+
+    .cv-about {
+      color: rgba(31, 76, 52, 0.7);
+      line-height: 1.7;
+    }
+
+    .cv-skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cv-skill-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 16px;
+      font-size: 13px;
+    }
+
+    .cv-skill-category {
+      font-weight: 600;
+      color: #1f4c34;
+    }
+
+    .cv-skill-items {
+      color: rgba(31, 76, 52, 0.7);
+    }
+
+    .cv-entries {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .cv-entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .cv-entry-role {
+      font-weight: 600;
+      color: #1f4c34;
+      font-size: 14px;
+    }
+
+    .cv-entry-period {
+      font-size: 12px;
+      color: rgba(31, 76, 52, 0.45);
+      white-space: nowrap;
+    }
+
+    .cv-entry-company {
+      color: #94A187;
+      font-size: 13px;
+      margin-top: 1px;
+      font-weight: 500;
+    }
+
+    .cv-entry-desc {
+      margin-top: 6px;
+      color: rgba(31, 76, 52, 0.65);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .cv-entry-note {
+      margin-top: 4px;
+      color: rgba(31, 76, 52, 0.5);
+      font-size: 12px;
+      font-style: italic;
+    }
+
+    .cv-footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(31, 76, 52, 0.12);
+      font-size: 11px;
+      color: rgba(31, 76, 52, 0.35);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media print {
+      .print-bar { display: none; }
+      body { font-size: 12px; }
+      .page { padding: 0; max-width: 100%; }
+      .cv-name { font-size: 22px; }
+      a { color: inherit !important; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 32px 24px 48px; }
+      .cv-header { flex-direction: column; gap: 16px; }
+      .cv-contact { text-align: left; }
+      .cv-skill-row { grid-template-columns: 1fr; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <a href="/" class="btn btn-secondary">← Back</a>
+    <button onclick="window.print()" class="btn btn-primary">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+      Save as PDF
+    </button>
+  </div>
+
+  <div class="page">
+
+    <header class="cv-header">
+      <div>
+        <div class="cv-name">{siteConfig.name}</div>
+        <div class="cv-title">{siteConfig.role} · {siteConfig.location}</div>
+      </div>
+      <div class="cv-contact">
+        <div><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></div>
+        <div>{siteConfig.phone}</div>
+        <div><a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer">linkedin.com/in/barboraperinajova</a></div>
+        <div><a href="https://perinaj.com">perinaj.com</a></div>
+      </div>
+    </header>
+
+    <section class="cv-section">
+      <div class="cv-section-title">Profile</div>
+      <p class="cv-about">{siteConfig.about}</p>
+    </section>
+
+    <section class="cv-section">
+      <div class="cv-section-title">Skills</div>
+      <div class="cv-skills-grid">
+        {siteConfig.skills.map((skill) => (
+          <div class="cv-skill-row">
+            <span class="cv-skill-category">{skill.category}</span>
+            <span class="cv-skill-items">{skill.items}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <div class="cv-section-title">Experience</div>
+      <div class="cv-entries">
+        {siteConfig.experience.map((exp) => (
+          <div class="cv-entry">
+            <div class="cv-entry-header">
+              <div class="cv-entry-role">{exp.role}</div>
+              <div class="cv-entry-period">{exp.period}</div>
+            </div>
+            <div class="cv-entry-company">{exp.company}</div>
+            <p class="cv-entry-desc">{exp.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="cv-section">
+      <div class="cv-section-title">Education</div>
+      <div class="cv-entries">
+        {siteConfig.education.map((edu) => (
+          <div class="cv-entry">
+            <div class="cv-entry-header">
+              <div class="cv-entry-role">{edu.degree}</div>
+              <div class="cv-entry-period">{edu.period}</div>
+            </div>
+            <div class="cv-entry-company">{edu.institution}</div>
+            {edu.note && <p class="cv-entry-note">{edu.note}</p>}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <footer class="cv-footer">
+      <span>perinaj.com</span>
+      <span>© {year} {siteConfig.name}</span>
+    </footer>
+
+  </div>
+</body>
+</html>

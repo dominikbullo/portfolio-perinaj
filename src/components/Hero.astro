@@ -12,7 +12,15 @@ const lastName = rest.join(" ");
       {siteConfig.role}<br />based in {siteConfig.location}
     </p>
     <div class="cta-row">
-      <a href="#experience" class="btn-primary">View Experience</a>
+      <a
+        class="btn-primary"
+        data-cal-link={siteConfig.meetingUrl}
+        data-cal-config='{"layout":"month_view"}'
+        href="#"
+        onclick="return false"
+      >
+        Book a meeting
+      </a>
       <a href={`mailto:${siteConfig.email}`} class="btn-link">{siteConfig.email}</a>
       <a
         href={siteConfig.linkedin}
@@ -73,7 +81,7 @@ const lastName = rest.join(" ");
   }
 
   .btn-primary {
-    background: var(--green);
+    background: var(--sage);
     color: var(--white);
     padding: 12px 28px;
     border-radius: 8px;
@@ -81,6 +89,8 @@ const lastName = rest.join(" ");
     font-weight: 600;
     text-decoration: none;
     transition: opacity 0.2s;
+    cursor: pointer;
+    display: inline-block;
   }
 
   .btn-primary:hover {

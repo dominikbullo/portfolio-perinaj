@@ -4,63 +4,66 @@ export const siteConfig = {
   description: "Portfolio of Barbora Perinajová — Sustainability Project Coordinator based in Stockholm, Sweden.",
   eyebrow: "Sustainability · Environment · Impact",
   email: "barbora@perinaj.com",
-  linkedin: "https://www.linkedin.com/in/barbora-perinajova/",
-  cvUrl: "/cv.pdf",
+  phone: "+72 15 25 073",
+  linkedin: "https://www.linkedin.com/in/barboraperinajova/",
+  cvUrl: "/cv",
+  meetingUrl: "barboraperinaj/online",
   location: "Stockholm, Sweden",
+  profilePhoto: "https://dev.perinaj.com/wp-content/uploads/2023/10/barbora-perinajova.jpeg",
   about:
-    "Environmental scientist and sustainability professional with a background spanning international relations, urban planning, and global social change. I bridge policy and practice — from grant identification and EU funding to hands-on project coordination across the private sector, NGOs, and public institutions.",
+    "I'm a dynamic professional with a strong record in urban development and project management, grounded in environmental science, fueled by a passion for the environment, and driven to combat climate change while promoting sustainability. With a background in environmental studies and experience in the European Parliament, I have a solid foundation for leading transformational change in sustainability initiatives. My expertise in Urban Living Labs has finely tuned my skills in urban planning, project management, and environmental and social sustainability.",
   aboutTags: [
+    "Urban Development",
     "Environmental Science",
-    "Urban Planning",
-    "International Relations",
     "Project Management",
-    "Grant Writing",
+    "Urban Infrastructure",
     "Circular Economy",
+    "International Relations",
+    "Grant Writing",
     "EU Policy",
-    "Sustainability",
   ],
   experience: [
     {
       period: "2021 — 2023",
       role: "Sustainability Project Coordinator",
-      company: "Balteus S.R.O.",
+      company: "Balteus s.r.o.",
       description:
-        "Coordinated initiatives processing 300 tons of non-recyclable plastics daily into sustainable products. Identified and secured EU funding for circular economy projects, and acted as liaison between technical teams, clients, and policy stakeholders.",
+        "Led eco-conscious projects, conducted research, and ensured project success. Coordinated initiatives processing 300 tons of non-recyclable plastics daily into sustainable products. Identified and secured EU funding for circular economy projects.",
     },
     {
-      period: "2020",
-      role: "Research Intern",
-      company: "European Parliament",
-      description:
-        "Supported environmental policy research and the preparation of legislative briefings. Analysed proposals on sustainability, climate change, and the circular economy.",
-    },
-    {
-      period: "2019 — 2020",
-      role: "Project Assistant",
+      period: "Aug — Sep 2021",
+      role: "Project Coordinator",
       company: "Slovak Investment and Trade Development Agency",
       description:
-        "Supported international investment promotion and cross-border project development initiatives.",
+        "Actively facilitated a Polish cross-border initiative, supporting international investment promotion and cross-border project development.",
     },
     {
-      period: "2018 — 2019",
-      role: "Intern",
-      company: "Ministry of Foreign Affairs, Slovakia",
+      period: "Sep — Dec 2020",
+      role: "Executive Support Coordinator Trainee",
+      company: "European Parliament",
       description:
-        "Contributed to international development programmes and diplomatic initiatives at the bilateral and multilateral level.",
+        "Gained a deep understanding of EU policy processes. Supported environmental policy research and preparation of legislative briefings on sustainability, climate change, and the circular economy.",
+    },
+    {
+      period: "Aug 2020",
+      role: "Office Assistant Trainee",
+      company: "Ministry of Foreign and European Affairs, Slovakia",
+      description:
+        "Played a pivotal role in coordinating and executing Slovak humanitarian aid to Lebanon, contributing to international development and diplomatic initiatives.",
     },
   ],
   projects: [
     {
-      name: "Non-Recyclable Plastics Initiative",
+      name: "Design Thinking Project — Region Stockholm",
       description:
-        "Led coordination of a large-scale circular economy operation converting 300 tons per day of non-recyclable plastic waste into sustainable products — a flagship project for the Slovak industrial sector.",
-      tags: ["Circular Economy", "Waste Management", "Project Coordination"],
+        "Created sustainable solutions to real-world challenges in the Stockholm area with global relevance. Used a human-centered approach, applying the needs and perspectives of users to develop innovative concepts in urban sustainability.",
+      tags: ["Urban Development", "Design Thinking", "Sustainability"],
       url: undefined as string | undefined,
     },
     {
       name: "UNICEF Emergency Lessons Campaign",
       description:
-        "Contributed to UNICEF's Emergency Lessons initiative, ensuring educational continuity in crisis and conflict contexts through cross-sector coordination and structured impact reporting.",
+        "Actively contributed to the Emergency Lessons campaign, raising awareness of the importance of education for children affected by emergencies amongst young Europeans. Coordinated cross-sector partnerships and impact reporting.",
       tags: ["Social Impact", "International Development", "Education"],
       url: undefined as string | undefined,
     },
@@ -68,7 +71,7 @@ export const siteConfig = {
   skills: [
     {
       category: "Sustainability",
-      items: "Environmental analysis, circular economy, waste management, climate policy, life cycle assessment",
+      items: "Environmental analysis, circular economy, waste management, climate policy, urban living labs, LCA",
     },
     {
       category: "Project Management",
@@ -88,13 +91,19 @@ export const siteConfig = {
       period: "2021 — 2023",
       degree: "MSc Globalisation, Environment & Social Change",
       institution: "Stockholm University",
-      note: "Specialisation in sustainable urban development and environmental governance",
+      note: "Interdisciplinary programme covering human geography, physical geography, and global environmental governance",
+    },
+    {
+      period: "2019 — 2020",
+      degree: "Exchange Studies — Project Management & Peace Research",
+      institution: "University of Tampere, Finland",
+      note: "Advanced studies in project management and conflict research",
     },
     {
       period: "2017 — 2021",
       degree: "BSc International Relations & Diplomacy",
       institution: "MGIMO University, Moscow",
-      note: "Focus on European affairs and international development policy",
+      note: "Bachelor's thesis on UN Peacekeeping Missions. Strong foundation in European affairs and international development policy.",
     },
   ],
 };

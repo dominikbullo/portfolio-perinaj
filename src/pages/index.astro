@@ -6,6 +6,7 @@ import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
 import Education from "../components/Education.astro";
+import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
 import { siteConfig } from "../config";
 import "../styles/global.css";
@@ -25,6 +26,11 @@ import "../styles/global.css";
       rel="stylesheet"
     />
     <title>{siteConfig.name} — {siteConfig.role}</title>
+    <script is:inline>
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, [L, ar[1], ar[2]])} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", {origin:"https://cal.com"});
+      Cal("ui", {"styles":{"branding":{"brandColor":"#94A187"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
   </head>
   <body>
     <Header />
@@ -35,6 +41,7 @@ import "../styles/global.css";
       <Projects />
       <Skills />
       <Education />
+      <Contact />
     </main>
     <Footer />
   </body>
