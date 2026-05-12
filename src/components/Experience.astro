@@ -4,7 +4,7 @@ import { siteConfig } from "../config";
 
 <section id="experience">
   <div class="container">
-    <span class="section-label reveal">experience</span>
+    <h2 class="section-label reveal">experience</h2>
     <ul class="exp-list">
       {siteConfig.experience.map((item, i) => {
         const isCurrent = item.period.includes('Present');
@@ -17,7 +17,7 @@ import { siteConfig } from "../config";
             </span>
             <div class="exp-content">
               <div class="exp-role-row">
-                <p class="exp-role">{item.role}</p>
+                <h3 class="exp-role">{item.role}</h3>
                 {isPrestige && <span class="prestige-badge" aria-label="Selective / competitive programme">★</span>}
               </div>
               <p class="exp-company">{item.company}</p>

@@ -4,13 +4,13 @@ import { siteConfig } from "../config";
 
 <section id="education">
   <div class="container">
-    <span class="section-label reveal">education</span>
+    <h2 class="section-label reveal">education</h2>
     <ul class="edu-list">
       {siteConfig.education.map((item, i) => (
         <li class="edu-item reveal" style={`--delay: ${i * 0.08}s`}>
           <span class="edu-date">{item.period}</span>
           <div class="edu-content">
-            <p class="edu-degree">{item.degree}</p>
+            <h3 class="edu-degree">{item.degree}</h3>
             <p class="edu-institution">{item.institution}</p>
             {item.note && <p class="edu-note">{item.note}</p>}
           </div>

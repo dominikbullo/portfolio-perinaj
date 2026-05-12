@@ -5,14 +5,14 @@ const catColors = ["#94A187", "#5a8a72", "#7a8f5e", "#b8956a"];
 
 <section id="skills">
   <div class="container">
-    <span class="section-label reveal">skills</span>
+    <h2 class="section-label reveal">skills</h2>
     <ul class="skills-list">
       {siteConfig.skills.map((item, i) => (
         <li class="skill-row reveal" style={`--delay: ${i * 0.08}s; --cat-color: ${catColors[i % catColors.length]}`}>
-          <span class="skill-cat">
+          <h3 class="skill-cat">
             <span class="skill-dot"></span>
             {item.category}
-          </span>
+          </h3>
           <span class="skill-items">{item.items}</span>
         </li>
       ))}
