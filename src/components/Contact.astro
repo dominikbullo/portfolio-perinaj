@@ -11,8 +11,6 @@ import { siteConfig } from "../config";
         <p class="contact-sub">
           Connect via email, phone, or schedule a meeting directly.
         </p>
-      </div>
-      <address class="contact-actions reveal" style="--delay: 0.12s">
         <a
           class="btn-book"
           data-cal-link={siteConfig.meetingUrl}
@@ -22,6 +20,8 @@ import { siteConfig } from "../config";
         >
           Book a meeting
         </a>
+      </div>
+      <address class="contact-actions reveal" style="--delay: 0.12s">
         <div class="contact-links">
           <a href={`mailto:${siteConfig.email}`} class="contact-link">
             <span class="contact-link-label">Email</span>
@@ -42,6 +42,7 @@ import { siteConfig } from "../config";
           </a>
         </div>
       </address>
+
     </div>
   </div>
 </section>
@@ -69,10 +70,19 @@ import { siteConfig } from "../config";
     line-height: 1.6;
   }
 
+  .contact-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact-text .btn-book {
+    margin-top: 28px;
+  }
+
   .contact-actions {
     display: flex;
     flex-direction: column;
-    gap: 28px;
   }
 
   .btn-book {
