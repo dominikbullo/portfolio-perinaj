@@ -12,10 +12,49 @@ import { siteConfig } from "../config";
         <li><a href="#projects">projects</a></li>
         <li><a href="#education">education</a></li>
       </ul>
-      <a href={siteConfig.cvUrl} class="cv-btn" onclick="downloadCV(event)">download cv</a>
+      <div class="nav-right">
+        <a href={siteConfig.cvUrl} class="cv-btn" onclick="downloadCV(event)">download cv</a>
+        <button class="hamburger" id="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
     </div>
   </nav>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <ul class="mobile-nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#education">education</a></li>
+      <li><a href={siteConfig.cvUrl} onclick="downloadCV(event)">download cv</a></li>
+    </ul>
+  </div>
 </header>
+
+<script>
+  (function () {
+    var btn = document.getElementById('nav-toggle');
+    var menu = document.getElementById('mobile-nav');
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', function () {
+      var open = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', String(!open));
+      menu.classList.toggle('is-open', !open);
+      menu.setAttribute('aria-hidden', String(open));
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        btn.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('is-open');
+        menu.setAttribute('aria-hidden', 'true');
+      });
+    });
+  })();
+</script>
 
 <style>
   header {
@@ -93,6 +132,12 @@ import { siteConfig } from "../config";
     width: 100%;
   }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
   .cv-btn {
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -103,14 +148,106 @@ import { siteConfig } from "../config";
     text-decoration: none;
     transition: background 0.2s;
     white-space: nowrap;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
   }
 
   .cv-btn:hover {
     background: rgba(255, 255, 255, 0.1);
   }
 
+  /* ── Hamburger ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px 8px;
+    margin: -10px -8px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s;
+    pointer-events: none;
+  }
+
+  .hamburger[aria-expanded="true"] .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger[aria-expanded="true"] .bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .hamburger[aria-expanded="true"] .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* ── Mobile nav panel ── */
+  .mobile-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: rgba(28, 68, 46, 0.98);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(249, 247, 235, 0.1);
+  }
+
+  .mobile-nav.is-open {
+    display: block;
+  }
+
+  .mobile-nav-links {
+    list-style: none;
+    padding: 8px var(--container-pad) 16px;
+  }
+
+  .mobile-nav-links li a {
+    display: block;
+    padding: 14px 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(249, 247, 235, 0.07);
+    transition: color 0.2s;
+  }
+
+  .mobile-nav-links li:last-child a {
+    border-bottom: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+  }
+
+  .mobile-nav-links li a:hover {
+    color: #fff;
+  }
+
   @media (max-width: 640px) {
     .nav-links {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .cv-btn {
       display: none;
     }
   }

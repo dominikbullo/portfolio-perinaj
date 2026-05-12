@@ -101,11 +101,18 @@ section .container {
 
 @media (max-width: 640px) {
   :root {
-    --container-pad: 24px;
+    --container-pad: 20px;
   }
 
   section .container {
     padding-top: 56px;
     padding-bottom: 56px;
+  }
+}
+
+@supports (padding: max(0px)) {
+  .container {
+    padding-left: max(var(--container-pad), env(safe-area-inset-left));
+    padding-right: max(var(--container-pad), env(safe-area-inset-right));
   }
 }
