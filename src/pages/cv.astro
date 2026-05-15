@@ -324,7 +324,7 @@ const year = new Date().getFullYear();
       <div class="cv-meta">
         <a href={`mailto:${siteConfig.email}`} class="cv-meta-item">{siteConfig.email}</a>
         <span class="cv-meta-dot"></span>
-        <span class="cv-meta-item">{siteConfig.phone}</span>
+        <a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`} class="cv-meta-item">{siteConfig.phone}</a>
         <span class="cv-meta-dot"></span>
         <span class="cv-meta-item">{siteConfig.location}</span>
         <span class="cv-meta-dot"></span>

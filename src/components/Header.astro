@@ -23,13 +23,15 @@ import { siteConfig } from "../config";
     </div>
   </nav>
   <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-    <ul class="mobile-nav-links">
-      <li><a href="#about">about</a></li>
-      <li><a href="#experience">experience</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#education">education</a></li>
-      <li><a href={siteConfig.cvUrl} onclick="downloadCV(event)">download cv</a></li>
-    </ul>
+    <div class="mobile-nav-inner">
+      <ul class="mobile-nav-links">
+        <li><a href="#about">about</a></li>
+        <li><a href="#experience">experience</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#education">education</a></li>
+      </ul>
+      <a href={siteConfig.cvUrl} class="mobile-cv-btn" onclick="downloadCV(event)">download cv</a>
+    </div>
   </div>
 </header>
 
@@ -212,30 +214,48 @@ import { siteConfig } from "../config";
     display: block;
   }
 
+  .mobile-nav-inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 8px var(--container-pad) 16px;
+  }
+
   .mobile-nav-links {
     list-style: none;
-    padding: 8px var(--container-pad) 16px;
   }
 
   .mobile-nav-links li a {
     display: block;
-    padding: 14px 0;
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 15px;
+    padding: 13px 0;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 13px;
     font-weight: 500;
+    letter-spacing: 0.2px;
     text-decoration: none;
     border-bottom: 1px solid rgba(249, 247, 235, 0.07);
     transition: color 0.2s;
   }
 
-  .mobile-nav-links li:last-child a {
-    border-bottom: none;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 13px;
-  }
-
   .mobile-nav-links li a:hover {
     color: #fff;
+  }
+
+  .mobile-cv-btn {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 14px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 7px 20px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .mobile-cv-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
   }
 
   @media (max-width: 640px) {

@@ -27,7 +27,7 @@ import { siteConfig } from "../config";
             <span class="contact-link-label">Email</span>
             <span class="contact-link-value">{siteConfig.email}</span>
           </a>
-          <a href={`tel:${siteConfig.phone}`} class="contact-link">
+          <a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`} class="contact-link">
             <span class="contact-link-label">Phone</span>
             <span class="contact-link-value">{siteConfig.phone}</span>
           </a>

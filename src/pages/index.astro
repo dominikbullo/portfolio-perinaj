@@ -118,7 +118,7 @@ const ogImage = new URL('/og.png', Astro.url).toString();
           "description": "Nordic Operations Manager at Nordcloud, an IBM Company — sole operational lead for 5 Nordic offices (Stockholm, Gothenburg, Malmö, Copenhagen, Oslo) with full P&L ownership. Sustainability advocate; elected member of Baltic Sea Region Youth Forum Climate & Environment Working Group; invited speaker at European Commission pre-COP30 workshop (Brussels 2024) and CBSS Youth Ministerial (Warsaw 2024). Former European Parliament trainee (Agriculture & Trade Committees, Brussels). MSc Globalisation, Environment & Social Change, Stockholm University (2023). Fluent in 6 languages: Swedish, English, Czech, Slovak, Danish, Norwegian.",
           "url": "https://perinaj.com",
           "email": siteConfig.email,
-          "telephone": siteConfig.phone,
+          "telephone": siteConfig.phone.replace(/\s/g, ''),
           "image": {
             "@type": "ImageObject",
             "@id": "https://perinaj.com/#person-image",
@@ -138,7 +138,7 @@ const ogImage = new URL('/og.png', Astro.url).toString();
             "@type": "ContactPoint",
             "contactType": "professional",
             "email": siteConfig.email,
-            "telephone": siteConfig.phone,
+            "telephone": siteConfig.phone.replace(/\s/g, ''),
             "availableLanguage": ["Swedish", "English", "Czech", "Slovak"]
           },
           "worksFor": { "@id": "https://perinaj.com/#nordcloud" },
