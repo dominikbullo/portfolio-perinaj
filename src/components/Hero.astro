@@ -40,6 +40,27 @@ const lastName = rest.join(" ");
           LinkedIn →
         </a>
       </div>
+      <div class="recruiter-row">
+        <span class="rec-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          EU citizen
+        </span>
+        <span class="rec-sep">·</span>
+        <span class="rec-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/><path d="M12 2a8 8 0 0 1 8 8c0 5.25-8 13-8 13S4 15.25 4 10a8 8 0 0 1 8-8z"/></svg>
+          Stockholm-based
+        </span>
+        <span class="rec-sep">·</span>
+        <span class="rec-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6"/><path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+          No relocation needed
+        </span>
+        <span class="rec-sep">·</span>
+        <span class="rec-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg>
+          No visa sponsorship needed
+        </span>
+      </div>
     </div>
     <div class="hero-photo-wrap">
       <img
@@ -153,6 +174,31 @@ const lastName = rest.join(" ");
     align-items: center;
     flex-wrap: wrap;
     animation: fadeUp 0.8s 0.38s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  .recruiter-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    animation: fadeUp 0.8s 0.46s cubic-bezier(0.16,1,0.3,1) both;
+  }
+
+  .rec-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(249, 247, 235, 0.35);
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+
+  .rec-sep {
+    font-size: 11px;
+    color: rgba(249, 247, 235, 0.15);
   }
 
   .btn-primary {
@@ -298,6 +344,16 @@ const lastName = rest.join(" ");
       justify-content: center;
       flex-wrap: wrap;
       gap: 10px;
+    }
+
+    .recruiter-row {
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .rec-sep:nth-of-type(3),
+    .rec-badge:last-child {
+      display: none;
     }
 
     .btn-primary {
