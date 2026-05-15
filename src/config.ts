@@ -5,7 +5,7 @@ export const siteConfig = {
     "Barbora Perinajová — Nordic Operations Manager at Nordcloud, an IBM Company, Stockholm. Sole P&L lead for 5 Nordic offices across Sweden, Denmark & Norway. EU Commission pre-COP30 speaker. Baltic Sea Region Youth Forum, Climate & Environment Working Group. MSc Stockholm University. Fluent in 6 languages including Swedish.",
   eyebrow: "IBM · Nordcloud · Nordic Operations · EU Climate Policy",
   email: "barbora@perinaj.com",
-  phone: "+72 15 25 073",
+  phone: "+46 72 15 25 073",
   linkedin: "https://www.linkedin.com/in/barboraperinajova/",
   cvUrl: "/cv",
   meetingUrl: "barboraperinaj/online",
