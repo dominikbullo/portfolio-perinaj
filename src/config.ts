@@ -73,8 +73,15 @@ export const siteConfig = {
     {
       name: "Baltic Sea Region Youth Forum",
       description:
-        "Elected member of the Climate & Environment Working Group (Sep 2025–present). Led the WG's Baltic Youth & COP30 webinar series (Dec 2025); presented Environmental Justice & Just Transition recommendations at the CBSS Youth Ministerial in Warsaw (April 2026). Contributing to the Steps for Nature podcast policy brief on EU Nature Restoration Law implementation across the BSR. Active in the Environmental Justice Campaign spotlighting green sacrifice zones across Baltic countries. Proposed a dedicated Water Governance Working Group addressing PFAS contamination and Baltic freshwater policy (May 2026). EU Commission pre-COP30 workshop speaker, Brussels (Oct 2025). Member of the Nordic Youth Climate Alliance (May 2026).",
+        "Elected member of the Climate & Environment Working Group (Sep 2025–present). Led the WG's Baltic Youth & COP30 webinar series (Dec 2025); presented Environmental Justice & Just Transition recommendations at the CBSS Youth Ministerial in Warsaw (April 2026). Contributing to the Steps for Nature podcast policy brief on EU Nature Restoration Law implementation across the BSR. Active in the Environmental Justice Campaign spotlighting green sacrifice zones across Baltic countries. Proposed a dedicated Water Governance Working Group addressing PFAS contamination and Baltic freshwater policy (May 2026). EU Commission pre-COP30 workshop speaker, Brussels (Oct 2025).",
       tags: ["EU Climate Policy", "PFAS Regulation", "Environmental Justice", "Youth Governance", "Baltic Sea", "Nature Restoration"],
+      url: undefined as string | undefined,
+    },
+    {
+      name: "Nordic Youth Climate Alliance",
+      description:
+        "Member of the Nordic Youth Climate Alliance (NYCA) since May 2026 — a pan-Nordic youth climate network connecting young people and NGOs across the Nordics, including Arctic and Indigenous youth. Works toward common policy papers, funding coordination, and youth representation in UN climate spaces (UNFCCC, COP). Active in NYCA's capacity-building programme and network-building initiatives.",
+      tags: ["Nordic Climate Policy", "Youth Network", "UNFCCC", "COP30", "Arctic Youth"],
       url: undefined as string | undefined,
     },
     {
