@@ -29,36 +29,43 @@ export const siteConfig = {
       role: "Nordic Operations Manager",
       company: "Nordcloud, an IBM Company",
       description:
-        "Sole operational lead for IBM's 5 Nordic offices: Stockholm, Gothenburg, Malmö, Copenhagen, and Oslo. Carry full P&L accountability: budget forecasting, cost-reduction initiatives, vendor contract negotiations, and sustainability-aligned procurement strategy. Introduced a digital case management system that reduced duplicate work by 60%; designed a 200-file document management framework cited as exemplary in an internal audit. Driving AI-based risk analysis implementation across Nordic operations. Act as central bridge between Nordic C-suite, IBM global management, and external partners.",
+        "Sole operational lead for IBM's 5 Nordic offices: Stockholm, Gothenburg, Malmö, Copenhagen, and Oslo. Full P&L accountability: budget forecasting, cost-reduction initiatives, vendor contract negotiations, and sustainability-aligned procurement. Introduced a digital case management system that reduced duplicate work by 60%; designed a 200-file document management framework cited as exemplary in an internal audit. Key operational lead for Nordcloud–IBM legal entity integration (effective 2026-07-01): drafted real estate transferal agreements under Swedish law with no prior legal background, coordinating cross-timezone with IBM Real Estate stakeholders. Organized internal and external events across all 5 Nordic countries remotely (20+ attendees per location). Consolidated supply chain vendors for measurable cost reduction; built structured onboarding and offboarding workflows from scratch. Driving AI-based risk analysis implementation across Nordic operations.",
       prestige: true,
     },
     {
       period: "Jan — Oct 2025",
-      role: "Communications & Operations Lead",
+      role: "Communication & Operation Specialist",
       company: "DigiNytt",
       description:
-        "Led communications, operations, and administration for a sustainability-focused digital media platform. Produced editorial content on smart water infrastructure and climate technology. Managed brand partnerships, content strategy, and external stakeholder relations aligned with an environmental responsibility mandate.",
+        "Led communications and operations for a sustainability-focused digital media platform. Analyzed communication efforts using digital tools to optimize strategy and outcomes; increased newsletter engagement by 50% through tone and structure refresh. Built and maintained stakeholder relationships and developed efficient operational workflows.",
+    },
+    {
+      period: "Nov 2023 — Jan 2025",
+      role: "Project Coordinator & Administrative Specialist",
+      company: "DeOutSol",
+      description:
+        "Designed and implemented administrative systems that significantly improved organizational efficiency and data accuracy. Identified, secured, and managed EU and SIDA grants; authored successful grant applications with logical frameworks. Built and maintained cross-sector stakeholder relationships across government, NGO, and international donor networks.",
     },
     {
       period: "Jan — Jun 2024",
-      role: "Advocacy & Institutional Fundraising",
+      role: "Intern — Institutional Fundraising & Environmental Advocacy",
       company: "The Kvinna till Kvinna Foundation",
       description:
-        "Developed policy proposals on gender equality and climate finance for one of Scandinavia's most recognised feminist humanitarian organisations. Coordinated multi-stakeholder international workshops spanning government, NGO, and academic sectors. Managed institutional grant applications for programmes supporting women in conflict zones.",
+        "Developed policy proposals on gender equality, climate financing, and urban resilience for one of Scandinavia's most recognised feminist humanitarian organisations. Coordinated international workshops fostering cross-sector stakeholder collaboration across government, NGO, and academic sectors with focus on inclusive urban development.",
     },
     {
       period: "Dec 2021 — Sep 2023",
       role: "EU Project Manager",
       company: "BALTEUS spol. s.r.o.",
       description:
-        "Managed EU structural-fund projects for an industrial circular economy company processing 300+ tonnes of non-recyclable plastics daily. Led cross-functional teams transitioning heavy industry towards sustainable practices. Secured EU funding and authored grant proposals aligned with circular economy policy frameworks; direct hands-on experience with EU co-financing mechanisms.",
+        "Managed EU structural-fund sustainability projects focused on technical improvements in urban and mobility planning for a circular economy company. Led cross-functional teams and enhanced public relations and strategic communication to increase project visibility in sustainable infrastructure networks. Direct hands-on experience with EU co-financing mechanisms.",
     },
     {
-      period: "Aug 2020 — Jan 2021",
+      period: "Sep 2020 — Jan 2021",
       role: "Parliamentary Trainee",
       company: "European Parliament",
       description:
-        "Competitive traineeship at the European Parliament's Committees on Agriculture, Rural Development, and International Trade in Brussels. Contributed legislative analysis on the Farm to Fork Strategy, EU circular economy regulation, and international trade frameworks. Drafted policy briefings for MEPs and supported committee proceedings. One of fewer than 300 trainees selected EU-wide per intake.",
+        "Competitive traineeship at the European Parliament in Brussels. Provided executive support to an MEP; facilitated high-level communication and events related to EU environmental policy. Contributed legislative analysis on the Farm to Fork Strategy, EU circular economy regulation, and international trade frameworks. One of fewer than 300 trainees selected EU-wide per intake.",
       prestige: true,
     },
   ],
