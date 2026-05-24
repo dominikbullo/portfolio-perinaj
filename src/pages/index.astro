@@ -22,35 +22,30 @@ const ogImage = new URL('/og.png', Astro.url).toString();
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#1f4c34" />
 
     <!-- Primary SEO -->
     <title>{siteConfig.name} — {siteConfig.role} · IBM · Stockholm</title>
     <meta name="description" content={siteConfig.description} />
-    <meta name="keywords" content="Nordic Operations Manager, IBM, Nordcloud, Stockholm, Sweden, Operations Manager, P&L Ownership, Nordic Offices, Sustainability, ESG, EU Climate Policy, PFAS Regulation, Baltic Sea, Baltic Sea Region Youth Forum, European Parliament, European Commission, Grant Management, SIDA, EU Structural Funds, Workplace Strategy, Procurement, Swedish speaking, multilingual, 6 languages, Stockholm University, MSc, Barbora Perinajova, Barbora Perinajová, perinaj.com" />
     <meta name="author" content={siteConfig.name} />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="canonical" href="/" />
-    <meta name="classification" content="Professional Profile" />
-    <meta name="category" content="Operations Management, Sustainability, Nordic Region" />
-    <meta name="coverage" content="Worldwide" />
-    <meta name="subject" content="Nordic Operations Manager, IBM, Sustainability, EU Policy" />
+    <link rel="canonical" href="https://perinaj.com/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Barbora Perinajová" />
     <meta property="og:title" content={`${siteConfig.name} — ${siteConfig.role}`} />
     <meta property="og:description" content={siteConfig.description} />
-    <meta property="og:url" content="/" />
+    <meta property="og:url" content="https://perinaj.com/" />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:secure_url" content={ogImage} />
     <meta property="og:image:alt" content="Barbora Perinajová — Nordic Operations Manager" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:locale" content="en_SE" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale:alternate" content="sv_SE" />
     <meta property="profile:first_name" content="Barbora" />
     <meta property="profile:last_name" content="Perinajová" />
 
@@ -103,7 +98,7 @@ const ogImage = new URL('/og.png', Astro.url).toString();
           "about": { "@id": "https://perinaj.com/#person" },
           "mainEntity": { "@id": "https://perinaj.com/#person" },
           "datePublished": "2025-05-11",
-          "dateModified": "2026-05-11"
+          "dateModified": new Date().toISOString().slice(0, 10)
         },
 
         /* ── Person ── */
@@ -141,15 +136,7 @@ const ogImage = new URL('/og.png', Astro.url).toString();
             "telephone": siteConfig.phone.replace(/\s/g, ''),
             "availableLanguage": ["Swedish", "English", "Czech", "Slovak"]
           },
-          "worksFor": { "@id": "https://perinaj.com/#nordcloud" },
-          "hasOccupation": {
-            "@type": "Occupation",
-            "name": "Operations Manager",
-            "occupationLocation": { "@type": "Country", "name": "Sweden" },
-            "description": "Full P&L ownership for 5 Nordic offices; vendor contract management, sustainability-aligned procurement, cross-border operations across Sweden, Denmark, and Norway"
-          },
-          /* Work history via EmployeeRole */
-          "memberOf": [
+          "worksFor": [
             {
               "@type": "EmployeeRole",
               "@id": "https://perinaj.com/#role-nordcloud",
@@ -172,15 +159,15 @@ const ogImage = new URL('/og.png', Astro.url).toString();
                 "url": "https://www.europarl.europa.eu",
                 "sameAs": "https://www.wikidata.org/wiki/Q8889"
               }
-            },
-            {
-              "@type": "OrganizationRole",
-              "@id": "https://perinaj.com/#role-bsryf",
-              "roleName": "Climate & Environment Working Group Member",
-              "description": "Elected member advocating for PFAS accountability and EU nature restoration policy at intergovernmental level",
-              "memberOf": { "@id": "https://perinaj.com/#bsryf" }
             }
           ],
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Operations Manager",
+            "occupationLocation": { "@type": "Country", "name": "Sweden" },
+            "description": "Full P&L ownership for 5 Nordic offices; vendor contract management, sustainability-aligned procurement, cross-border operations across Sweden, Denmark, and Norway"
+          },
+          "memberOf": { "@id": "https://perinaj.com/#bsryf" },
           "alumniOf": [
             {
               "@type": "CollegeOrUniversity",
@@ -214,8 +201,8 @@ const ogImage = new URL('/og.png', Astro.url).toString();
             }
           ],
           "award": [
-            "European Commission Pre-COP30 Workshop Speaker, Brussels 2024",
-            "CBSS Youth Ministerial Speaker, Warsaw 2024"
+            "European Commission Pre-COP30 Workshop Speaker, Brussels 2025",
+            "CBSS Youth Ministerial Speaker, Warsaw 2026"
           ],
           "performerIn": [
             { "@id": "https://perinaj.com/#event-cop30-workshop" },
@@ -252,17 +239,14 @@ const ogImage = new URL('/og.png', Astro.url).toString();
           "@id": "https://perinaj.com/#nordcloud",
           "name": "Nordcloud, an IBM Company",
           "url": "https://nordcloud.com",
-          "sameAs": "https://nordcloud.com",
+          "sameAs": "https://www.linkedin.com/company/nordcloud/",
           "parentOrganization": {
             "@type": "Organization",
             "@id": "https://perinaj.com/#ibm",
             "name": "IBM",
             "legalName": "International Business Machines Corporation",
             "url": "https://ibm.com",
-            "sameAs": [
-              "https://www.wikidata.org/wiki/Q37156",
-              "https://ibm.com"
-            ]
+            "sameAs": "https://www.wikidata.org/wiki/Q37156"
           }
         },
 
@@ -271,6 +255,8 @@ const ogImage = new URL('/og.png', Astro.url).toString();
           "@type": "Organization",
           "@id": "https://perinaj.com/#bsryf",
           "name": "Baltic Sea Region Youth Forum",
+          "url": "https://bsryf.org",
+          "sameAs": "https://bsryf.org",
           "description": "CBSS-affiliated intergovernmental youth governance forum covering 11 Baltic Sea states; Climate & Environment Working Group focuses on PFAS regulation and EU nature restoration policy",
           "memberOf": {
             "@type": "Organization",
@@ -285,7 +271,7 @@ const ogImage = new URL('/og.png', Astro.url).toString();
           "@id": "https://perinaj.com/#event-cop30-workshop",
           "name": "European Commission Pre-COP30 Climate Workshop",
           "description": "High-level European Commission workshop on EU climate policy, PFAS regulation, and nature restoration ahead of COP30. Baltic Sea Region Youth Forum delegates presented youth recommendations to EU officials.",
-          "startDate": "2024",
+          "startDate": "2025-10",
           "eventStatus": "https://schema.org/EventScheduled",
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "location": {
@@ -313,7 +299,7 @@ const ogImage = new URL('/og.png', Astro.url).toString();
           "@id": "https://perinaj.com/#event-cbss-ministerial",
           "name": "CBSS Youth Ministerial",
           "description": "Council of the Baltic Sea States Youth Ministerial in Warsaw — Baltic Sea Region Youth Forum delegates shaped intergovernmental recommendations on climate, digitalisation, and Baltic Sea connectivity.",
-          "startDate": "2024",
+          "startDate": "2026-04",
           "eventStatus": "https://schema.org/EventScheduled",
           "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
           "location": {
@@ -331,6 +317,13 @@ const ogImage = new URL('/og.png', Astro.url).toString();
             "url": "https://cbss.org"
           },
           "performer": { "@id": "https://perinaj.com/#person" }
+        },
+
+        /* ── BreadcrumbList ── */
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://perinaj.com/#breadcrumb",
+          "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://perinaj.com/" }]
         }
 
       ]
@@ -341,12 +334,6 @@ const ogImage = new URL('/og.png', Astro.url).toString();
         window.open('/cv', '_blank');
       }
     </script>
-    <script is:inline>
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, [L, ar[1], ar[2]])} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", {origin:"https://cal.com"});
-      Cal("ui", {"styles":{"branding":{"brandColor":"#94A187"}},"hideEventTypeDetails":false,"layout":"month_view"});
-    </script>
-
     <!-- Umami Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="bebfd6cf-a2f7-4938-8160-0ab23277a8ee"></script>
   </head>
@@ -374,6 +361,11 @@ const ogImage = new URL('/og.png', Astro.url).toString();
       }, { threshold: 0.08 });
       document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
     })();
+  </script>
+  <script is:inline>
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, [L, ar[1], ar[2]])} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#94A187"}},"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
   </body>
 </html>
